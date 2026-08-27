@@ -302,7 +302,7 @@ function GitHubLogo() {
 
 function AlibabaLogo() {
   return (
-    <svg className="h-6 w-auto text-white/80" viewBox="0 0 90 30" aria-hidden="true">
+    <svg className="logo-item h-5 w-auto text-white/80" viewBox="0 0 90 30" aria-hidden="true">
       <text x="0" y="22" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="bold" fill="currentColor">
         Alibaba
       </text>
