@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
 import FlowpathHero from "./components/FlowpathHero";
 import CompanyGlass from "./components/CompanyGlass";
+import { FOOTER_LINKS } from "./site";
 import { motion } from "framer-motion";
+
 import {
   Boxes,
   Facebook,
@@ -317,7 +320,7 @@ function Showcase() {
 const FOOTER_VIDEO_URL =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260429_114316_1c7889ad-2885-410e-b493-98119fee0ddb.mp4";
 
-function Footer() {
+export function Footer() {
   return (
     <section className="relative overflow-hidden px-5 py-16 sm:px-8 md:py-24">
       <video
@@ -359,64 +362,50 @@ function Footer() {
 
             </div>
 
-            <div className="grid grid-cols-2 gap-10 md:col-span-7 md:grid-cols-3">
-              <div>
-                <h4 className="mb-4 text-sm font-medium uppercase tracking-wider text-white">Company</h4>
-                <ul className="space-y-2 text-xs text-muted-foreground">
-                  {NAV.map((item) => (
-                    <li key={item.href}>
-                      <a href={item.href} className="hover:text-white transition-colors">
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className="mb-4 text-sm font-medium uppercase tracking-wider text-white">Legal</h4>
-                <ul className="space-y-2 text-xs text-muted-foreground">
-                  <li>
-                    <a href="#" className="hover:text-white transition-colors">
-                      Privacy Policy
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white transition-colors">
-                      Terms of Service
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white transition-colors">
-                      Cookie Policy
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white transition-colors">
-                      Report a Concern
-                    </a>
-                  </li>
-                </ul>
-              </div>
+            <div className="grid grid-cols-2 gap-10 md:col-span-7 md:grid-cols-4">
+              {FOOTER_LINKS.map((group) => (
+                <div key={group.title}>
+                  <h4 className="mb-4 text-sm font-medium uppercase tracking-wider text-white">
+                    {group.title}
+                  </h4>
+                  <ul className="space-y-2 text-xs text-muted-foreground">
+                    {group.links.map((link) => (
+                      <li key={link.to}>
+                        <Link to={link.to} className="transition-colors hover:text-white">
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
               <div>
                 <h4 className="mb-4 text-sm font-medium uppercase tracking-wider text-white">Connect</h4>
                 <ul className="space-y-2 text-xs text-muted-foreground">
                   <li>
-                    <a href="mailto:support@megsyai.com" className="hover:text-white transition-colors">
-                      Get in Touch
+                    <a href="mailto:support@megsyai.com" className="transition-colors hover:text-white">
+                      support@megsyai.com
                     </a>
                   </li>
                   <li>
-                    <span>support@megsyai.com</span>
-                  </li>
-                  <li>
-                    <a href="tel:+201098125727" className="hover:text-white transition-colors">
+                    <a href="tel:+201098125727" className="transition-colors hover:text-white">
                       +20 109 812 5727
                     </a>
                   </li>
-
+                  <li>
+                    <a
+                      href="https://megsyai.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transition-colors hover:text-white"
+                    >
+                      megsyai.com
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
+
           </div>
 
           <div className="mt-10 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-6 md:flex-row md:gap-4">
