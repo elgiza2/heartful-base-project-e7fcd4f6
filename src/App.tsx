@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import "./poster.css";
+import CompanySection from "./sections/CompanySection";
+import OperationsSection from "./sections/OperationsSection";
+import ShowcaseSection from "./sections/ShowcaseSection";
+import SiteFooter from "./sections/SiteFooter";
 
 const FRONT_LILY =
   "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260808_192942_e1086505-d7da-433b-a59b-8220f4e6c808.png&w=1280&q=85";
