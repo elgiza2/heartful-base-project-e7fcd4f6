@@ -75,10 +75,18 @@ function useScrollReveal<T extends HTMLElement>() {
   return { ref, visible };
 }
 
-function RevealSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function RevealSection({
+  children,
+  className = "",
+  ...rest
+}: React.HTMLAttributes<HTMLElement>) {
   const { ref, visible } = useScrollReveal<HTMLElement>();
   return (
-    <section ref={ref} className={`reveal ${visible ? "reveal--in" : ""} ${className}`.trim()}>
+    <section
+      ref={ref}
+      className={`reveal ${visible ? "reveal--in" : ""} ${className}`.trim()}
+      {...rest}
+    >
       {children}
     </section>
   );
