@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import NexaHero from "./components/NexaHero";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowUpRight,
@@ -154,134 +155,6 @@ function Backdrop() {
       <div className="absolute -right-32 top-0 h-[28rem] w-[28rem] rounded-full bg-brand-mint/10 blur-[150px]" />
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
     </motion.div>
-  );
-}
-
-function Nav() {
-  return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
-      <nav className="glass mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-3 sm:px-5">
-        <a href="#top" className="font-display text-lg font-semibold tracking-tight">
-          MEG<span className="text-gradient">SY</span>
-        </a>
-        <ul className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
-          {NAV.map((item) => (
-            <li key={item.href}>
-              <a href={item.href} className="transition-colors hover:text-foreground">
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <div className="flex items-center gap-2">
-          <a
-            href="#contact"
-            className="hidden rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90 sm:inline-flex"
-          >
-            Get in touch
-          </a>
-          <a
-            href="#work"
-            aria-label="Open navigation"
-            className="glass-soft inline-flex h-9 w-9 items-center justify-center rounded-full md:hidden"
-          >
-            <Menu className="h-4 w-4" />
-          </a>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
-function Hero() {
-  const reduced = useReducedMotion();
-  return (
-    <section
-      id="top"
-      className="noise-overlay relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-5 pb-24 pt-32 sm:px-8"
-    >
-      <Backdrop />
-      <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <motion.span
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="glass-soft inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs text-muted-foreground"
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-          Egyptian technology company · Est. Cairo
-        </motion.span>
-
-        <h1 className="mt-7 max-w-4xl text-[clamp(2.6rem,8vw,6rem)] font-semibold leading-[0.95]">
-          {HEADLINE.map((word, i) => (
-            <motion.span
-              key={word + i}
-              initial={
-                reduced ? { opacity: 1 } : { opacity: 0, y: 28, filter: "blur(12px)" }
-              }
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: 0.8, delay: 0.15 + i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-              className="mr-[0.28em] inline-block"
-            >
-              {i >= 4 ? <span className="text-gradient">{word}</span> : word}
-            </motion.span>
-          ))}
-        </h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
-        >
-          Megsy for Digital Platforms Development and E-commerce LLC designs, builds and runs its
-          own products end to end — research, engineering, design and support under one roof.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
-        >
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
-          >
-            Talk to the team <ArrowUpRight className="h-4 w-4" />
-          </a>
-          <a
-            href="#work"
-            className="glass inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-transform hover:-translate-y-0.5"
-          >
-            What we do
-          </a>
-        </motion.div>
-
-        <motion.ul
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.9, delay: 0.9 }}
-          className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-xs uppercase tracking-[0.18em] text-muted-foreground"
-        >
-          <li>Registered in Cairo</li>
-          <li>One CEO — Hamza Hassan</li>
-          <li>Products owned end to end</li>
-        </motion.ul>
-      </div>
-
-      <div className="relative z-10 mx-auto mt-16 w-full max-w-6xl">
-        <div className="glass-soft overflow-hidden rounded-2xl">
-          <div className="flex w-max animate-marquee-left items-center gap-10 py-3 pl-10 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            {[...MARQUEE, ...MARQUEE].map((item, i) => (
-              <span key={item + i} className="whitespace-nowrap">
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -567,9 +440,8 @@ function Footer() {
 export default function App() {
   return (
     <div className="relative min-h-screen bg-background">
-      <Nav />
       <main>
-        <Hero />
+        <NexaHero />
         <Company />
         <Work />
         <Leadership />
