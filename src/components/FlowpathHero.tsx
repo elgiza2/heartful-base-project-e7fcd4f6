@@ -283,7 +283,7 @@ function AmazonLogo() {
 
 function SupabaseLogo() {
   return (
-    <svg className="h-6 w-auto" viewBox="0 0 24 24" aria-hidden="true">
+    <svg className="logo-item h-5 w-auto" viewBox="0 0 24 24" aria-hidden="true">
       <path fill="#3ECF8E" d="M12 2L2 19h10v3l10-17h-10V2z" />
     </svg>
   );
