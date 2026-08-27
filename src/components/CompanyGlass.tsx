@@ -39,7 +39,6 @@ export default function CompanyGlass() {
       <div className="relative z-10 w-full max-w-7xl px-6 py-24 md:px-12">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="max-w-xl">
-            <p className="eyebrow mb-4">The company</p>
             <h2 className="font-display text-3xl font-light leading-tight md:text-4xl lg:text-5xl">
               The company behind Megsy.
             </h2>
