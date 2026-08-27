@@ -1,4 +1,5 @@
 import FlowpathHero from "./components/FlowpathHero";
+import CompanyGlass from "./components/CompanyGlass";
 import { motion } from "framer-motion";
 import {
   Boxes,
@@ -84,60 +85,6 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
     >
       {children}
     </motion.div>
-  );
-}
-
-function Company() {
-  return (
-    <section id="company" className="relative border-t border-white/5 px-5 py-24 sm:px-8 sm:py-32">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
-        <Reveal>
-          <p className="eyebrow">The company</p>
-          <h2 className="mt-4 text-[clamp(2rem,4.5vw,3.4rem)] font-semibold leading-[1.05]">
-            The company behind Megsy.
-          </h2>
-          <p className="mt-6 max-w-xl text-muted-foreground">
-            Megsy for Digital Platforms Development and E-commerce LLC is an Egyptian technology
-            company registered and operating in Cairo. We build applied AI software and the digital
-            commerce infrastructure around it: product engineering, platform operations, and the
-            systems that let a small team ship at scale.
-          </p>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <div className="glass rounded-2xl p-6 sm:p-8">
-            <div className="flex items-center gap-3">
-              <Building2 className="h-5 w-5 text-primary" />
-              <span className="text-sm font-medium">Registered entity</span>
-            </div>
-            <dl className="mt-6 space-y-5 text-sm">
-              <div>
-                <dt className="eyebrow">Legal name</dt>
-                <dd className="mt-1">
-                  Megsy for Digital Platforms Development and E-commerce LLC
-                </dd>
-              </div>
-              <div>
-                <dt className="eyebrow">Registered office</dt>
-                <dd className="mt-1 text-muted-foreground">
-                  58 Al Hijaz St., Amoun Tower, opposite Heliopolis Hospital, Unit 84, Floor 8,
-                  Sheraton Al Matar, Nozha District, Cairo Governorate, Egypt
-                </dd>
-              </div>
-              <div className="flex gap-10">
-                <div>
-                  <dt className="eyebrow">Commercial register</dt>
-                  <dd className="mt-1">284691</dd>
-                </div>
-                <div>
-                  <dt className="eyebrow">Tax ID</dt>
-                  <dd className="mt-1">774034785</dd>
-                </div>
-              </div>
-            </dl>
-          </div>
-        </Reveal>
-      </div>
-    </section>
   );
 }
 
@@ -358,7 +305,7 @@ export default function App() {
     <div className="relative min-h-screen bg-background">
       <main>
         <FlowpathHero />
-        <Company />
+        <CompanyGlass />
         <Work />
         <Leadership />
         <Contact />
