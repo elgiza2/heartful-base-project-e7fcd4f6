@@ -411,7 +411,7 @@ export default function App() {
             type="button"
             className="burger"
             aria-label="Open menu"
-            onClick={() => setPanel("company")}
+            onClick={() => setPanel("menu")}
           >
             <span />
             <span />
