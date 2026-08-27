@@ -56,45 +56,8 @@ function drawMorphBlob(
   ctx.fill();
 }
 
-function useScrollReveal<T extends HTMLElement>() {
-  const ref = useRef<T>(null);
-  const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
-  return { ref, visible };
-}
-
-function RevealSection({
-  children,
-  className = "",
-  ...rest
-}: React.HTMLAttributes<HTMLElement>) {
-  const { ref, visible } = useScrollReveal<HTMLElement>();
-  return (
-    <section
-      ref={ref}
-      className={`reveal ${visible ? "reveal--in" : ""} ${className}`.trim()}
-      {...rest}
-    >
-      {children}
-    </section>
-  );
-}
 
 export default function App() {
   const stageRef = useRef<HTMLDivElement>(null);
