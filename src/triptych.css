@@ -1,0 +1,582 @@
+/* Megsy AI Operations Overview — triptych (light) */
+.tri {
+  --page: #f0f0f0;
+  --surface: #fff;
+  --ink: #282828;
+  --muted: #777;
+  --orange: #ff6900;
+  --orange-soft: #ffdfca;
+  --green: #4d8c35;
+  --card-title-size: 1.86cqw;
+  --card-title-tracking: -0.125cqw;
+  --feature-title-size: 2.17cqw;
+  --feature-title-tracking: -0.09cqw;
+  --cards-height: 33.81cqw;
+  --cards-scale: min(1, calc(60cqh / var(--cards-height)));
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 640px;
+  background: var(--page);
+  color: var(--ink);
+  container-type: size;
+  overflow: hidden;
+  font-family: "Segoe UI Variable", "Segoe UI", Arial, Helvetica, sans-serif;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tri__cards {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 81.71cqw;
+  height: var(--cards-height);
+  display: grid;
+  grid-template-columns: 32.33% 32.33% 31.7%;
+  justify-content: space-between;
+  align-items: start;
+  scale: var(--cards-scale);
+}
+
+.tri .card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 72.2% 27.8%;
+  border: 0.075cqw solid rgb(255 233 218 / 96%);
+  border-radius: 1.59cqw;
+  background: var(--surface);
+  box-shadow:
+    0.32cqw 1.18cqh 1.42cqw rgb(44 35 29 / 11%),
+    0 0.18cqh 0.42cqw rgb(44 35 29 / 3.5%);
+  opacity: 0;
+  transform: translate3d(0, 16px, 0) scale(0.985);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tri--in .card {
+  opacity: 1;
+  transform: none;
+}
+.tri--in .card:nth-child(1) {
+  transition-delay: 0.24s;
+}
+.tri--in .card:nth-child(2) {
+  transition-delay: 0.06s;
+}
+.tri--in .card:nth-child(3) {
+  transition-delay: 0.33s;
+}
+
+.tri .card:last-child {
+  height: 98.5%;
+  margin-top: 0.76%;
+}
+
+.tri .panel {
+  position: relative;
+  margin-inline: 2.55%;
+  overflow: hidden;
+  border-radius: 1.28cqw 1.28cqw 1.08cqw 1.08cqw;
+  background:
+    radial-gradient(circle at 50% 78%, rgb(255 225 207 / 30%), transparent 47%),
+    linear-gradient(180deg, rgb(255 255 255 / 96%), rgb(255 248 243 / 94%));
+}
+.tri .card:last-child .panel {
+  margin-inline: 2%;
+  background:
+    radial-gradient(circle at 74% 46%, rgb(255 225 204 / 70%), transparent 48%),
+    linear-gradient(180deg, rgb(255 255 255 / 96%), rgb(255 242 232 / 97%));
+}
+
+.tri .card-copy {
+  position: relative;
+  padding: 7.1% 8.4% 6.5%;
+}
+.tri .card-copy h2 {
+  margin: 0 0 1.6%;
+  color: #292929;
+  font-family: "Segoe UI Semibold", "Segoe UI Variable Display", "Segoe UI", Arial, sans-serif;
+  font-size: var(--card-title-size);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: var(--card-title-tracking);
+  white-space: nowrap;
+  transform: translateY(-0.36cqh);
+  transform-origin: left top;
+}
+.tri .card:last-child .card-copy h2 {
+  font-size: var(--feature-title-size);
+  letter-spacing: var(--feature-title-tracking);
+}
+.tri .card-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.39cqw;
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.06cqw;
+  transform: scaleX(0.94);
+  transform-origin: left top;
+}
+
+.tri .corner-icon {
+  position: absolute;
+  right: 8.4%;
+  bottom: 22.5%;
+  width: 8.2%;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%
+;
+  background: var(--orange-soft);
+  color: var(--orange);
+}
+
+/* card 1 */
+.tri .timeline {
+  position: absolute;
+  top: 5.7%;
+  left: 20.8%;
+  width: 58.4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f27624;
+  font-size: 0.62cqw;
+  font-weight: 500;
+  letter-spacing: -0.015cqw;
+}
+.tri .timeline i {
+  width: 20%;
+  border-top: 0.05cqw dashed rgb(190 139 96 / 70%);
+}
+.tri .bars {
+  position: absolute;
+  left: 5.9%;
+  right: 5.9%;
+  bottom: 12%;
+  height: 62%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.tri .bar {
+  width: 2.4%;
+  height: var(--h);
+  border-radius: 999px;
+  background: rgb(255 219 196 / 64%);
+}
+.tri .bar.active {
+  width: 2.6%;
+  background: var(--orange);
+  box-shadow: 0 0 0.28cqw rgb(255 105 0 / 24%);
+}
+.tri .value-chip {
+  position: absolute;
+  top: 15.5%;
+  left: 46.2%;
+  width: 14%;
+  height: 7.6%;
+  display: grid;
+  place-items: center;
+  border: 0.12cqw solid #fff;
+  border-radius: 999px;
+  background: var(--orange);
+  box-shadow:
+    0 0 0 0.055cqw var(--orange),
+    0 0.28cqh 0.4cqw rgb(69 38 18 / 24%);
+  color: #fff;
+  font-size: 0.67cqw;
+  font-weight: 600;
+}
+.tri .axis {
+  position: absolute;
+  left: 7.7%;
+  right: 7.2%;
+  bottom: 5.2%;
+  display: flex;
+  justify-content: space-between;
+  color: #888;
+  font-size: 0.57cqw;
+}
+
+.tri .spark {
+  position: relative;
+  width: 52%;
+  aspect-ratio: 1;
+}
+.tri .spark::before,
+.tri .spark::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  background: currentColor;
+}
+.tri .spark::before {
+  top: 41%;
+  left: 0;
+  width: 100%;
+  height: 18%;
+}
+.tri .spark::after {
+  top: 0;
+  left: 41%;
+  width: 18%;
+  height: 100%;
+}
+
+/* card 2 */
+.tri .assistant-head {
+  position: absolute;
+  top: 8.2%;
+  left: 6.2%;
+  display: flex;
+  align-items: center;
+  gap: 1.02cqw;
+  color: var(--orange);
+  font-size: 1.28cqw;
+  font-weight: 700;
+  letter-spacing: -0.04cqw;
+}
+.tri .badge {
+  width: 2.16cqw;
+  height: 2.16cqw;
+  border-radius: 50%;
+  background: var(--orange-soft);
+  display: grid;
+  place-items: center;
+}
+.tri .badge .spark {
+  width: 48%;
+  background: currentColor;
+  filter: blur(0.035cqw);
+  clip-path: polygon(
+    47% 0,
+    53% 0,
+    58% 28%,
+    65% 35%,
+    72% 42%,
+    100% 47%,
+    100% 53%,
+    72% 58%,
+    65% 65%,
+    58% 72%,
+    53% 100%,
+    47% 100%,
+    42% 72%,
+    35% 65%,
+    28% 58%,
+    0 53%,
+    0 47%,
+    28% 42%,
+    35% 35%,
+    42% 28%
+  );
+}
+.tri .badge .spark::before,
+.tri .badge .spark::after {
+  content: none;
+}
+.tri .question {
+  position: absolute;
+  top: 21.5%;
+  left: 6.2%;
+  margin: 0;
+  color: #151515;
+  font-size: 1.34cqw;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.07cqw;
+}
+.tri .prompt {
+  position: absolute;
+  top: 32%;
+  left: 6.2%;
+  width: 87.2%;
+  height: 35.8%;
+  padding: 4.7% 4.2%;
+  border: 0.06cqw solid #beb4ae;
+  border-radius: 0.86cqw;
+  background: rgb(255 255 255 / 32%);
+  color: var(--muted);
+  font-size: 1.03cqw;
+  font-weight: 475;
+  line-height: 1.31;
+  letter-spacing: -0.035cqw;
+}
+.tri .automate {
+  position: absolute;
+  top: 78.1%;
+  left: 6.2%;
+  width: 34.6%;
+  height: 11.6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1cqw;
+  border-radius: 999px;
+  background: linear-gradient(100deg, #ff9b5b 0%, #ff8840 38%, #ff6b05 100%);
+  box-shadow:
+    0 0.6cqh 1.35cqw rgb(255 105 0 / 52%),
+    0 0.2cqh 0.46cqw rgb(255 105 0 / 31%),
+    0 0 0.82cqw 0.08cqw rgb(255 118 30 / 24%);
+  color: #fff;
+  font-size: 0.98cqw;
+  font-weight: 475;
+  line-height: 1;
+}
+.tri .automate-label {
+  letter-spacing: -0.025cqw;
+  transform: scaleX(1.03);
+  transform-origin: left center;
+}
+.tri canvas.magic {
+  flex: 0 0 auto;
+  width: 1.5cqw;
+  height: 1.46cqw;
+  transform: translateX(-0.15cqw);
+}
+.tri .cursor {
+  position: absolute;
+  top: 85.7%;
+  left: 54%;
+  width: 4.3%;
+  aspect-ratio: 0.72;
+  z-index: 3;
+  isolation: isolate;
+  filter: drop-shadow(0 0 0.075cqw #fff) drop-shadow(0 0 0.075cqw #fff)
+    drop-shadow(0.08cqw 0.16cqw 0.08cqw rgb(0 0 0 / 48%));
+}
+.tri .cursor::before,
+.tri .cursor::after {
+  content: "";
+  position: absolute;
+  clip-path: polygon(0 0, 94% 62%, 57% 67%, 38% 100%);
+}
+.tri .cursor::before {
+  inset: 0;
+  background: #050505;
+}
+.tri .cursor::after {
+  inset: -11%;
+  z-index: -1;
+  background: #fff;
+}
+.tri .flow-icon {
+  position: relative;
+  width: 54%;
+  height: 58%;
+  background: linear-gradient(var(--orange), var(--orange)) center / 48% 18% no-repeat;
+}
+.tri .flow-icon::before,
+.tri .flow-icon::after {
+  content: "";
+  position: absolute;
+  width: 34%;
+  height: 70%;
+  border-radius: 999px;
+  background: var(--orange);
+}
+.tri .flow-icon::before {
+  left: 4%;
+  top: 24%;
+}
+.tri .flow-icon::after {
+  right: 4%;
+  top: 6%;
+}
+
+/* card 3 */
+.tri .metric {
+  position: absolute;
+  top: 7.8%;
+  left: 5.2%;
+}
+.tri .metric-label {
+  margin-bottom: 0.38cqh;
+  color: #676767;
+  font-size: 0.88cqw;
+  font-weight: 475;
+}
+.tri .metric-row {
+  display: flex;
+  align-items: center;
+  gap: 1.02cqw;
+}
+.tri .metric-row strong {
+  color: var(--orange);
+  font-size: 2.1cqw;
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04cqw;
+}
+.tri .metric-row span {
+  margin-top: 0.52cqh;
+  color: var(--green);
+  font-size: 0.93cqw;
+  font-weight: 700;
+  letter-spacing: -0.045cqw;
+}
+.tri canvas.decision-flow {
+  position: absolute;
+  top: 39%;
+  left: 0;
+  width: 100%;
+  height: 53%;
+  display: block;
+  pointer-events: none;
+}
+.tri .tag {
+  position: absolute;
+  z-index: 2;
+  height: 8.3%;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 95%);
+  color: #282828;
+  font-size: 0.62cqw;
+  font-weight: 600;
+  letter-spacing: -0.012cqw;
+}
+.tri .tag.action {
+  top: 34.8%;
+  right: 8%;
+  width: 28%;
+}
+.tri .tag.confidence {
+  top: 67%;
+  left: 6%;
+  width: 40%;
+}
+.tri .tag.path {
+  top: 82.2%;
+  right: 8%;
+  width: 37%;
+}
+.tri .speed {
+  position: relative;
+  width: 58%;
+  aspect-ratio: 1;
+  background:
+    linear-gradient(var(--orange), var(--orange)) 0 31% / 27% 8% no-repeat,
+    linear-gradient(var(--orange), var(--orange)) 0 49% / 38% 8% no-repeat,
+    linear-gradient(var(--orange), var(--orange)) 0 67% / 22% 8% no-repeat;
+}
+.tri .speed::before {
+  content: "";
+  position: absolute;
+  inset: 4% 1% 2% 28%;
+  background: var(--orange);
+  clip-path: polygon(58% 0, 100% 0, 69% 40%, 94% 40%, 28% 100%, 44% 58%, 7% 58%);
+}
+
+/* tablet */
+@media (max-width: 56rem) and (max-aspect-ratio: 5/4) {
+  .tri__cards {
+    width: min(88cqw, 70cqh, 45rem);
+    height: auto;
+    scale: 1;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(0.75rem, 2cqw, 1.2rem);
+  }
+  .tri .card {
+    height: auto;
+    aspect-ratio: 0.781;
+    border-radius: clamp(0.9rem, 2cqw, 1.2rem);
+  }
+  .tri .card:last-child {
+    grid-column: 1 / -1;
+    width: calc((100% - clamp(0.75rem, 2cqw, 1.2rem)) / 2);
+    margin-inline: auto;
+    margin-top: 0;
+  }
+}
+
+/* mobile */
+@media (max-width: 32rem),
+  (max-height: 28rem) and (max-width: 64rem) and (pointer: coarse) {
+  .tri {
+    height: auto;
+    container-type: inline-size;
+    overflow: visible;
+    padding-block: clamp(2rem, 8cqw, 4rem);
+  }
+  .tri__cards {
+    position: relative;
+    top: auto;
+    left: auto;
+    translate: none;
+    scale: 1;
+    width: min(90cqw, 26rem);
+    margin-inline: auto;
+    height: auto;
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 4cqw, 1.5rem);
+  }
+  .tri .card,
+  .tri .card:last-child {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 0.781;
+    margin-top: 0;
+    border-radius: clamp(1rem, 5cqw, 1.4rem);
+  }
+  .tri .card-copy h2,
+  .tri .card:last-child .card-copy h2 {
+    font-size: clamp(1.05rem, 6cqw, 1.5rem);
+    letter-spacing: -0.02em;
+    white-space: normal;
+  }
+  .tri .card-copy p {
+    font-size: clamp(0.8rem, 4cqw, 1rem);
+    transform: none;
+  }
+  .tri .timeline,
+  .tri .axis {
+    font-size: clamp(0.5rem, 2.4cqw, 0.7rem);
+  }
+  .tri .value-chip,
+  .tri .tag {
+    font-size: clamp(0.5rem, 2.6cqw, 0.72rem);
+  }
+  .tri .assistant-head {
+    font-size: clamp(0.85rem, 4.4cqw, 1.1rem);
+  }
+  .tri .badge {
+    width: clamp(1.3rem, 7cqw, 1.8rem);
+    height: clamp(1.3rem, 7cqw, 1.8rem);
+  }
+  .tri .question {
+    font-size: clamp(0.85rem, 4.4cqw, 1.1rem);
+  }
+  .tri .prompt {
+    font-size: clamp(0.72rem, 3.6cqw, 0.9rem);
+    border-radius: 0.6rem;
+  }
+  .tri .automate {
+    min-height: 2.75rem;
+    font-size: clamp(0.72rem, 3.6cqw, 0.9rem);
+    width: 48%;
+  }
+  .tri canvas.magic {
+    width: 1rem;
+    height: 1rem;
+  }
+  .tri .metric-label {
+    font-size: clamp(0.7rem, 3.4cqw, 0.9rem);
+  }
+  .tri .metric-row strong {
+    font-size: clamp(1.2rem, 7cqw, 1.8rem);
+  }
+  .tri .metric-row span {
+    font-size: clamp(0.7rem, 3.4cqw, 0.9rem);
+  }
+}
