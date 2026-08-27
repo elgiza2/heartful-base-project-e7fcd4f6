@@ -15,7 +15,8 @@
   --cards-scale: min(1, calc(60cqh / var(--cards-height)));
   position: relative;
   width: 100%;
-  min-height: 100svh;
+  height: 100svh;
+  min-height: 640px;
   background: var(--page);
   color: var(--ink);
   container-type: size;
