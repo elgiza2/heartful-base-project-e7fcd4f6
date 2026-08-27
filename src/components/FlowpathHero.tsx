@@ -245,8 +245,8 @@ export default function FlowpathHero() {
       </div>
 
       {/* Logo bar */}
-      <div className="relative z-10 mt-auto w-full border-t border-white/10 bg-black/20 py-5 backdrop-blur-md sm:py-6">
-        <div className="flex items-center justify-center gap-8 px-5 sm:gap-12 md:gap-16">
+      <div className="relative z-10 mt-auto flex h-20 w-full items-center border-t border-white/10 bg-black/20 backdrop-blur-md">
+        <div className="flex w-full items-center justify-center gap-10 px-5 md:gap-16">
           <GoogleLogo />
           <AmazonLogo />
           <SupabaseLogo />
