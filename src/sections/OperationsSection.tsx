@@ -174,8 +174,18 @@ export default function OperationsSection() {
     <section
       ref={sectionRef}
       className={`tri ${visible ? "tri--in" : ""}`}
-      aria-label="Megsy AI operations overview"
+      aria-label="What Megsy does"
     >
+      <header className="tri__head">
+        <p className="tri__eyebrow">The company</p>
+        <h2>The company behind Megsy.</h2>
+        <p>
+          Megsy for Digital Platforms Development and E-commerce LLC is an Egyptian technology
+          company registered and operating in Cairo. We design, build and run our own products end
+          to end — research, engineering, design and support under one roof.
+        </p>
+      </header>
+
       <div className="tri__cards" aria-label="Product benefits">
         {/* Card 1 */}
         <article className="card">
@@ -284,6 +294,23 @@ export default function OperationsSection() {
             </span>
           </div>
         </article>
+      </div>
+
+      <div className="tri__doing">
+        <div>
+          <h3>What we do</h3>
+          <p>
+            We build applied AI software and the digital commerce infrastructure around it: product
+            engineering, platform operations, and the systems that let a small team ship at scale.
+          </p>
+        </div>
+        <ul>
+          <li>Digital platform development and maintenance.</li>
+          <li>Applied AI research turned into shippable product.</li>
+          <li>E-commerce systems, billing and subscription operations.</li>
+          <li>Design systems and brand work for our own products.</li>
+          <li>Direct customer support, handled by the team that builds.</li>
+        </ul>
       </div>
     </section>
   );

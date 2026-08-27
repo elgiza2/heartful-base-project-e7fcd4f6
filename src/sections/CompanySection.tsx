@@ -75,20 +75,20 @@ export default function CompanySection() {
       <header className="mb-6 flex flex-col gap-6 md:mb-8 md:flex-row md:items-start md:justify-between">
         <div className="max-w-3xl">
           <h2 className="text-[28px] font-normal leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-[44px]">
-            Hi, I&apos;m Hamza Hassan — CEO of Megsy.
+Leadership: one CEO, Hamza Hassan.
           </h2>
           <p className="mt-4 max-w-3xl text-sm leading-[1.6] text-white/60 md:text-[15px]">
-            Megsy is an Egyptian technology company registered in Cairo as Megsy for Digital
-            Platforms Development and E-commerce LLC. We build applied AI products and the
-            infrastructure behind them, with a single chief executive leading research, engineering
-            and design.
+            Megsy is led by a single chief executive. There is one CEO — Hamza Hassan, Founder
+            &amp; Chief Executive Officer. An Egyptian entrepreneur who started coding at 15 and
+            shipped his first product at 17, he founded Megsy to build AI infrastructure from Egypt
+            for the world.
           </p>
         </div>
         <a
           href="mailto:support@megsyai.com"
           className="liquid-glass inline-flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 text-sm text-white/90 sm:px-6 sm:py-3"
         >
-          Let&apos;s Team Up Today
+          Contact the office of the CEO
         </a>
       </header>
 
@@ -104,7 +104,7 @@ export default function CompanySection() {
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="relative flex h-full flex-col justify-between p-5 md:p-6">
-            <SectionLabel>Background</SectionLabel>
+            <SectionLabel>CEO background</SectionLabel>
             <div className="grid grid-cols-[auto_auto_1fr_auto] items-center gap-x-3 gap-y-2 text-[12px] text-white/85">
               {TIMELINE.map(([year, role, place]) => (
                 <div key={year} className="col-span-4 grid grid-cols-subgrid items-center">
@@ -121,15 +121,12 @@ export default function CompanySection() {
         {/* Column 2 */}
         <div className="grid gap-4 md:grid-rows-[auto_1fr] md:gap-5">
           <div className="noise-overlay relative overflow-hidden rounded-2xl bg-[#324444] p-5 md:p-6">
-            <SectionLabel align="start">Client Voice</SectionLabel>
-            <p className="mt-4 text-[13px] leading-[1.6] text-white/85 sm:text-[13.5px]">
-              &ldquo;Megsy replaced four separate tools for us. The team ships fast, answers fast,
-              and the platform never got in the way of the work.&rdquo;
-            </p>
-            <p className="mt-4 text-[12px] text-white/70">
-              <strong className="font-medium text-white">Elena Brooks</strong>, Creative Director —
-              Halcyon
-            </p>
+            <SectionLabel align="start">How we work</SectionLabel>
+            <ul className="mt-4 space-y-2.5 text-[13px] leading-[1.55] text-white/85">
+              <li>A small team that ships directly, with no layers in between.</li>
+              <li>Reliability over novelty. Clear pricing. Data handled with restraint.</li>
+              <li>Fast on an average phone and an average connection — that is the bar.</li>
+            </ul>
           </div>
           <div className="relative min-h-[220px] overflow-hidden rounded-2xl bg-black">
             <video
@@ -171,7 +168,7 @@ export default function CompanySection() {
             </div>
           </div>
           <div className="noise-overlay relative overflow-hidden rounded-2xl bg-[#324444] p-5 md:p-6">
-            <SectionLabel align="start">Reach Me</SectionLabel>
+            <SectionLabel align="start">Office of the CEO</SectionLabel>
             <a
               href="mailto:support@megsyai.com"
               className="absolute right-5 top-5 grid h-9 w-9 place-items-center rounded-full border border-white/20 text-white/80 transition-colors hover:text-white"
@@ -179,8 +176,10 @@ export default function CompanySection() {
             >
               <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
             </a>
-            <p className="mt-4 text-sm text-white/85">support@megsyai.com</p>
-            <p className="mt-1 text-sm text-white/60">Cairo, Egypt · Sun–Thu</p>
+            <p className="mt-4 text-sm text-white/85">
+              Hamza Hassan — Founder &amp; Chief Executive Officer
+            </p>
+            <p className="mt-1 text-sm text-white/60">Cairo, Egypt · support@megsyai.com</p>
           </div>
         </div>
       </div>
