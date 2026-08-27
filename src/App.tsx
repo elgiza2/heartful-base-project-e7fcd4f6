@@ -3,9 +3,14 @@ import CompanyGlass from "./components/CompanyGlass";
 import { motion } from "framer-motion";
 import {
   Boxes,
+  Facebook,
   Gauge,
+  Instagram,
   Mail,
   MapPin,
+  Music2,
+  Twitter,
+  Youtube,
 } from "lucide-react";
 
 const NAV = [
