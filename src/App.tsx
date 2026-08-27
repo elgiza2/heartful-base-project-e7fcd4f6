@@ -168,11 +168,12 @@ function Leadership() {
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
               Megsy is led by a single chief executive — Hamza Hassan, Founder & Chief Executive
               Officer. An Egyptian entrepreneur who started coding at 15 and shipped his first
-              product at 17, he founded Megsy to build AI infrastructure from Egypt for the world.
+              product at 17, he founded Megsy to build AI products from Egypt for the world. Product
+              direction, engineering standards and customer commitments all run through one desk.
             </p>
             <div className="mt-8 space-y-3 text-sm text-muted-foreground">
               <p className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-primary" /> Cairo, Egypt
+                <MapPin className="h-4 w-4 text-primary" /> Cairo &amp; Damanhour, Egypt
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
@@ -181,6 +182,7 @@ function Leadership() {
                 </a>
               </p>
             </div>
+
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {PRINCIPLES.map((p) => (
                 <div
