@@ -317,7 +317,7 @@ function Showcase() {
 const FOOTER_VIDEO_URL =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260429_114316_1c7889ad-2885-410e-b493-98119fee0ddb.mp4";
 
-function Footer() {
+export function Footer() {
   return (
     <section className="relative overflow-hidden px-5 py-16 sm:px-8 md:py-24">
       <video
