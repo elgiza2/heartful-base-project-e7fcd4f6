@@ -265,24 +265,6 @@ export default function App() {
             <canvas className="flower__canvas" ref={revealCanvasRef} />
           </div>
 
-          <p className="support-copy support-copy--left">
-            <span className="support-copy__inner">
-              Every workflow,
-              <br />
-              intelligently connected.
-            </span>
-          </p>
-          <p className="support-copy support-copy--right">
-            <span className="support-copy__inner">
-              Less manual work.
-              <br />
-              More meaningful output.
-            </span>
-          </p>
-
-          <div className="scroll-hint" aria-hidden="true">
-            <span />
-          </div>
         </section>
 
         <OperationsSection />
