@@ -177,7 +177,6 @@ export default function OperationsSection() {
       aria-label="What Megsy does"
     >
       <header className="tri__head">
-        <p className="tri__eyebrow">The company</p>
         <h2>The company behind Megsy.</h2>
         <p>
           Megsy for Digital Platforms Development and E-commerce LLC is an Egyptian technology
@@ -215,11 +214,11 @@ export default function OperationsSection() {
             </div>
           </div>
           <div className="card-copy">
-            <h2>Instant Visibility</h2>
+            <h2>End-to-End Ownership</h2>
             <p>
-              Real-time data across your
+              We design, build and run our
               <br />
-              operations.
+              own products under one roof.
             </p>
             <span className="corner-icon">
               <i className="spark" />
@@ -234,28 +233,28 @@ export default function OperationsSection() {
               <span className="badge">
                 <i className="spark" />
               </span>
-              <span>Megsy AI</span>
+              <span>Megsy Research</span>
             </div>
-            <p className="question">How can I help you automate?</p>
+            <p className="question">What are we building next?</p>
             <div className="prompt">
-              When a new lead is captured in WebFlow,
+              Turn applied AI research into a shippable
               <br />
-              create a deal in HubSpot and notify the sales
+              product that our own customers use
               <br />
-              team on Slack.
+              every day.
             </div>
             <div className="automate">
-              <span className="automate-label">Automate</span>
+              <span className="automate-label">Ship</span>
               <canvas className="magic" ref={magicRef} aria-hidden="true" />
             </div>
             <i className="cursor" aria-hidden="true" />
           </div>
           <div className="card-copy">
-            <h2>Autonomous Workflows</h2>
+            <h2>Applied AI Products</h2>
             <p>
-              Automate processes with
+              Research becomes real products
               <br />
-              Megsy AI.
+              built from Cairo for the world.
             </p>
             <span className="corner-icon">
               <i className="flow-icon" />
@@ -283,11 +282,11 @@ export default function OperationsSection() {
             <div className="tag path">Path Optimized: +14.2%</div>
           </div>
           <div className="card-copy">
-            <h2>Faster Decisions</h2>
+            <h2>Commerce Infrastructure</h2>
             <p>
-              Turn insights into action
+              Billing, subscriptions and support
               <br />
-              instantly.
+              systems built to scale.
             </p>
             <span className="corner-icon">
               <i className="speed" />
