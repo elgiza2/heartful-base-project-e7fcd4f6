@@ -272,7 +272,7 @@ function GoogleLogo() {
 
 function AmazonLogo() {
   return (
-    <svg className="h-6 w-auto text-white/80" viewBox="0 0 100 30" aria-hidden="true">
+    <svg className="logo-item h-5 w-auto text-white/80" viewBox="0 0 100 30" aria-hidden="true">
       <text x="0" y="22" fontFamily="Arial, sans-serif" fontSize="18" fontWeight="bold" fill="currentColor">
         amazon
       </text>
