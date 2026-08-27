@@ -99,9 +99,15 @@ function Work() {
       <div className="relative z-10 mx-auto max-w-6xl">
         <Reveal>
           <h2 className="max-w-2xl text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-[1.08]">
-            Software, commerce and support — owned in one house.
+            We build the workspace, the infrastructure and the support behind it.
           </h2>
+          <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Our first product launched in July 2026 and drew roughly 100 users in its first 24
+            hours. Everything it runs on is ours: the platform, the cloud layer, the billing and the
+            inbox that answers you.
+          </p>
         </Reveal>
+
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {CAPABILITIES.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.06}>
