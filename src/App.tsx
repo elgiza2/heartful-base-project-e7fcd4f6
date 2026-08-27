@@ -6,8 +6,6 @@ import {
   Gauge,
   Mail,
   MapPin,
-  ShieldCheck,
-  Sparkles,
 } from "lucide-react";
 
 const NAV = [
@@ -47,17 +45,14 @@ const CAPABILITIES = [
 
 const PRINCIPLES = [
   {
-    icon: Sparkles,
     title: "Small team, direct ownership",
     body: "A small team that ships directly, with no layers in between.",
   },
   {
-    icon: ShieldCheck,
     title: "Reliability over novelty",
     body: "Clear pricing, predictable systems, and data handled with restraint.",
   },
   {
-    icon: Gauge,
     title: "Fast on an average phone",
     body: "Average device, average connection — that is the performance bar we hold.",
   },
@@ -181,8 +176,7 @@ function Leadership() {
                   key={p.title}
                   className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-5 backdrop-blur-xl transition-all duration-300 hover:border-white/[0.16] hover:bg-white/[0.07]"
                 >
-                  <p.icon className="h-4 w-4 text-primary" />
-                  <h3 className="mt-3 text-sm font-semibold">{p.title}</h3>
+                  <h3 className="text-sm font-semibold">{p.title}</h3>
                   <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{p.body}</p>
                 </div>
               ))}
