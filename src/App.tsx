@@ -382,8 +382,6 @@ export default function App() {
             </ul>
           </nav>
 
-          <span className="status-pill">Secure system</span>
-
           <button
             type="button"
             className="burger"
