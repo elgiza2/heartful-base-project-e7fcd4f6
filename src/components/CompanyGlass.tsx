@@ -212,10 +212,6 @@ export default function CompanyGlass() {
 
       <div className="tg__inner">
         <div className="tg__bar">
-          <span className="tg__barItem">
-            <span className="tg__dot" />
-            <span className="tg__barLabel">Cairo, Egypt</span>
-          </span>
           <a className="tg__barItem" href="mailto:support@megsyai.com">
             <span className="tg__barLabel">support@megsyai.com</span>
           </a>
