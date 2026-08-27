@@ -190,35 +190,38 @@ function Leadership() {
 function Contact() {
   return (
     <section id="contact" className="relative overflow-hidden px-5 py-24 sm:px-8 sm:py-32">
-      <img
-        src="/pyramids.jpg"
-        alt="Giza pyramids at twilight"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-        aria-hidden="true"
-        loading="lazy"
-        width={1920}
-        height={1080}
-      />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-black/40" />
-
       <div className="relative z-10 mx-auto max-w-6xl">
         <Reveal>
-          <div className="glass noise-overlay relative overflow-hidden rounded-3xl px-6 py-14 text-center sm:px-14">
+          <div className="glass noise-overlay relative overflow-hidden rounded-3xl">
             <div className="pointer-events-none absolute inset-x-0 -top-24 h-64 veil" />
-            <h2 className="relative text-[clamp(1.9rem,4.4vw,3.2rem)] font-semibold leading-[1.06]">
-              Talk to the people who build it.
-            </h2>
-            <p className="relative mx-auto mt-5 max-w-xl text-muted-foreground">
-              Partnerships, press, billing or legal — every message reaches the team directly.
-            </p>
-            <div className="relative mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href="mailto:support@megsyai.com"
-                className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
-              >
-                <Mail className="h-4 w-4" /> support@megsyai.com
-              </a>
-              <span className="text-sm text-muted-foreground">Cairo, Egypt · UTC+2</span>
+            <div className="grid lg:grid-cols-2">
+              <div className="relative h-64 lg:h-auto">
+                <img
+                  src="/pyramids.jpg"
+                  alt="Giza pyramids at twilight"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                  width={1920}
+                  height={1080}
+                />
+              </div>
+              <div className="relative px-6 py-14 text-center sm:px-14 lg:px-16">
+                <h2 className="text-[clamp(1.9rem,4.4vw,3.2rem)] font-semibold leading-[1.06]">
+                  Talk to the people who build it.
+                </h2>
+                <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
+                  Partnerships, press, billing or legal — every message reaches the team directly.
+                </p>
+                <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                  <a
+                    href="mailto:support@megsyai.com"
+                    className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+                  >
+                    <Mail className="h-4 w-4" /> support@megsyai.com
+                  </a>
+                  <span className="text-sm text-muted-foreground">Cairo, Egypt · UTC+2</span>
+                </div>
+              </div>
             </div>
           </div>
         </Reveal>
