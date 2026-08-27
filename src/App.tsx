@@ -103,23 +103,23 @@ function Work() {
         preload="auto"
         src={WORK_VIDEO_URL}
       />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-background/80" />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-background via-transparent to-background" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-black/30" />
 
       <div className="relative z-10 mx-auto max-w-6xl">
         <Reveal>
-          <p className="eyebrow">What we do</p>
-          <h2 className="mt-4 max-w-2xl text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-[1.08]">
+          <h2 className="max-w-2xl text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-[1.08]">
             Software, commerce and support — owned in one house.
           </h2>
         </Reveal>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {CAPABILITIES.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.06}>
-              <article className="glass lift h-full rounded-2xl p-6">
-                <item.icon className="h-5 w-5 text-primary" />
+              <article className="group h-full rounded-2xl border border-white/10 bg-black/40 p-6 transition-all duration-300 hover:border-white/20 hover:bg-black/50">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5">
+                  <item.icon className="h-4 w-4 text-primary" />
+                </div>
                 <h3 className="mt-5 text-lg font-semibold">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
               </article>
             </Reveal>
           ))}
