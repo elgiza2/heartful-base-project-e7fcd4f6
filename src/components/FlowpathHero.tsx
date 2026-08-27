@@ -91,12 +91,22 @@ export default function FlowpathHero() {
   }, [mobileOpen]);
 
   return (
-    <section
-      className="relative flex h-screen w-full flex-col overflow-hidden"
-      style={{
-        background: "linear-gradient(180deg, #03070A 0%, #AAC2CE 100%)",
-      }}
-    >
+    <section className="relative flex h-screen w-full flex-col overflow-hidden bg-[#03070A]">
+      {/* Background video + Auren gradient overlay */}
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_39ca84eAE1ODL9hbR5VhoEj8tBf/hf_20260709_102332_2d8c4e02-313c-4362-aaa7-4c907cfc4f79.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(180deg, rgba(3,7,10,0.75) 0%, rgba(3,7,10,0.25) 45%, rgba(170,194,206,0.35) 100%)",
+        }}
+      />
 
       {/* Nav */}
       <nav className="relative z-20 w-full px-5 py-4 sm:px-6 sm:py-5 md:px-12 lg:px-16">
