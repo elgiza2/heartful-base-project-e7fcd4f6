@@ -116,12 +116,24 @@ function Work() {
   );
 }
 
+const LEADERSHIP_VIDEO_URL =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_064122_c4750c0e-7476-4b44-94a2-a85a65c63bf2.mp4";
+
 function Leadership() {
   return (
-    <section
-      id="leadership"
-      className="relative border-t border-white/5 px-5 py-24 sm:px-8 sm:py-32"
-    >
+    <section id="leadership" className="relative overflow-hidden px-5 py-24 sm:px-8 sm:py-32">
+      <video
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        aria-hidden="true"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        src={LEADERSHIP_VIDEO_URL}
+      />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-black/30" />
+      <div className="relative z-10">
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
         <Reveal>
           <p className="eyebrow">Leadership</p>
