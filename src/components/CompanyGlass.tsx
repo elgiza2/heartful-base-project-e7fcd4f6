@@ -52,11 +52,17 @@ export default function CompanyGlass() {
               The company behind Megsy.
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-white/70 md:text-base">
-              Megsy for Digital Platforms Development and E-commerce LLC is an Egyptian technology
-              company registered and operating in Cairo. We build applied AI software and the
-              digital commerce infrastructure around it — product engineering, platform operations,
-              and the systems that let a small team ship at scale.
+              Megsy for Digital Platforms Development and E-commerce LLC is a registered Egyptian
+              technology company. We build unified digital workspaces: instead of a stack of separate
+              subscriptions for chat, code, imaging and document handling, we consolidate those
+              utilities into one fast, minimal product — and we run the cloud infrastructure,
+              billing and support behind it ourselves.
             </p>
+            <p className="mt-4 text-sm leading-relaxed text-white/50 md:text-base">
+              Founded and led from Egypt, with product engineering, platform operations and customer
+              support handled by the same team.
+            </p>
+
           </div>
 
           <div className="glass rounded-2xl p-7 md:p-9">
