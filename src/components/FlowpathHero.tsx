@@ -249,6 +249,79 @@ export default function FlowpathHero() {
           </div>
         </div>
       </div>
+
+      {/* Logo ticker */}
+      <div className="relative z-10 mt-auto w-full border-t border-white/10 bg-black/20 py-4 backdrop-blur-md sm:py-5">
+        <div className="relative flex overflow-hidden">
+          <div className="animate-ticker flex shrink-0 items-center gap-10 px-5 sm:gap-14 md:gap-16">
+            <TickerItems />
+            <TickerItems />
+          </div>
+        </div>
+      </div>
     </section>
+  );
+}
+
+function TickerItems() {
+  return (
+    <>
+      <span className="flex items-center gap-2 whitespace-nowrap text-sm font-medium text-white/70 sm:text-base">
+        <img src="/model-logos/google.ico" alt="" className="h-5 w-5 object-contain sm:h-6 sm:w-6" />
+        Google
+      </span>
+      <span className="flex items-center gap-2 whitespace-nowrap text-sm font-medium text-white/70 sm:text-base">
+        <AmazonLogo />
+        Amazon
+      </span>
+      <span className="flex items-center gap-2 whitespace-nowrap text-sm font-medium text-white/70 sm:text-base">
+        <SupabaseLogo />
+        Supabase
+      </span>
+      <span className="flex items-center gap-2 whitespace-nowrap text-sm font-medium text-white/70 sm:text-base">
+        <GitHubLogo />
+        GitHub
+      </span>
+      <span className="flex items-center gap-2 whitespace-nowrap text-sm font-medium text-white/70 sm:text-base">
+        <AlibabaLogo />
+        Alibaba
+      </span>
+      <span className="flex items-center gap-2 whitespace-nowrap text-sm font-medium text-white/90 sm:text-base">
+        <img src="/model-logos/megsy.png" alt="" className="h-5 w-5 object-contain sm:h-6 sm:w-6" />
+        Megsy
+      </span>
+    </>
+  );
+}
+
+function AmazonLogo() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current text-white/70" aria-hidden="true">
+      <path d="M15.93 17.09c-.06.08-.15.12-.25.12H8.32c-.1 0-.19-.04-.25-.12-.06-.08-.08-.18-.05-.28l.88-3.08c.04-.13.16-.22.3-.22h1.55c.14 0 .26.09.3.22l.88 3.08c.03.1.01.2-.05.28zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.23 14.16c-.18.22-.45.35-.74.35H9.51c-.29 0-.56-.13-.74-.35a.97.97 0 0 1-.18-.82l1.32-4.61c.1-.35.42-.59.79-.59h5.6c.37 0 .69.24.79.59l1.32 4.61c.09.29.03.6-.18.82z" />
+    </svg>
+  );
+}
+
+function SupabaseLogo() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current text-white/70" aria-hidden="true">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
+    </svg>
+  );
+}
+
+function GitHubLogo() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current text-white/70" aria-hidden="true">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+    </svg>
+  );
+}
+
+function AlibabaLogo() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current text-white/70" aria-hidden="true">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" />
+    </svg>
   );
 }
