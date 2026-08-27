@@ -4,17 +4,26 @@ const VIDEO_URL =
 const FACTS = [
   {
     title: "Legal name",
-    text: "Megsy for Digital Platforms Development and E-commerce LLC — an Egyptian limited liability company registered and operating in Cairo.",
+    text: "Megsy for Digital Platforms Development and E-commerce LLC — an Egyptian limited liability company registered and operating in Egypt.",
   },
   {
     title: "Registered office",
-    text: "58 Al Hijaz St., Amoun Tower, opposite Heliopolis Hospital, Unit 84, Floor 8, Sheraton Al Matar, Nozha District, Cairo Governorate, Egypt.",
+    text: "58 Al Hijaz St., Amoun Tower, opposite Heliopolis Hospital, Unit 84, Floor 8, Sheraton Al Matar, Nozha District, Cairo Governorate, Egypt. Second base in Damanhour, Beheira.",
   },
   {
     title: "Registry",
-    text: "Commercial register 284691 · Tax ID 774034785 · support@megsyai.com",
+    text: "Commercial register 284691 · Tax ID 774034785",
+  },
+  {
+    title: "Contact",
+    text: "support@megsyai.com · +20 109 812 5727",
+  },
+  {
+    title: "Focus",
+    text: "Cloud and SaaS product development. We serve startups, productivity and business-services teams, media and e-commerce — mostly small and mid-sized companies.",
   },
 ];
+
 
 export default function CompanyGlass() {
   return (
