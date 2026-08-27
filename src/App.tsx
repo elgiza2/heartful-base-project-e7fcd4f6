@@ -52,6 +52,38 @@ function drawMorphBlob(
   ctx.fill();
 }
 
+function useScrollReveal<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, visible };
+}
+
+function RevealSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  const { ref, visible } = useScrollReveal<HTMLElement>();
+  return (
+    <section ref={ref} className={`reveal ${visible ? "reveal--in" : ""} ${className}`.trim()}>
+      {children}
+    </section>
+  );
+}
+
 export default function App() {
   const stageRef = useRef<HTMLDivElement>(null);
   const flowerRef = useRef<HTMLDivElement>(null);
@@ -173,7 +205,6 @@ export default function App() {
       }
       wasActive = true;
 
-      // FRONT layer: white fill, blobs punch holes
       frontCtx.setTransform(1, 0, 0, 1, 0, 0);
       frontCtx.clearRect(0, 0, front.width, front.height);
       frontCtx.globalCompositeOperation = "source-over";
@@ -181,7 +212,6 @@ export default function App() {
       frontCtx.fillRect(0, 0, front.width, front.height);
       frontCtx.globalCompositeOperation = "destination-out";
 
-      // REVEAL layer: clear, blobs paint white
       revealCtx.setTransform(1, 0, 0, 1, 0, 0);
       revealCtx.clearRect(0, 0, reveal.width, reveal.height);
       revealCtx.globalCompositeOperation = "source-over";
@@ -228,7 +258,7 @@ export default function App() {
 
   return (
     <div className={anim ? "anim" : undefined}>
-      <main className="viewport">
+      <main>
         <section className="stage" ref={stageRef}>
           <svg className="brand-mark" viewBox="0 0 66 62" aria-hidden="true">
             <line x1="33" y1="1" x2="33" y2="61" />
@@ -274,7 +304,113 @@ export default function App() {
               More meaningful output.
             </span>
           </p>
+
+          <div className="scroll-hint" aria-hidden="true">
+            <span />
+          </div>
         </section>
+
+        <article className="content">
+          <RevealSection className="content__intro">
+            <h2>One AI workspace for every creative job.</h2>
+            <p>
+              Megsy unifies chat, images, video, cinema, lip-sync, slides, deep research and
+              full-stack app building into a single window — built on the world&apos;s best models,
+              wrapped in one calm interface.
+            </p>
+          </RevealSection>
+
+          <RevealSection className="content__platform">
+            <div className="content__grid">
+              <div>
+                <h3>The platform</h3>
+                <p>
+                  Megsy routes each message to the model that handles it best and keeps full context
+                  when you switch. Upload files, search the web live, and let the workspace remember
+                  the thread instead of starting over.
+                </p>
+              </div>
+              <ul className="feature-list">
+                <li>80+ models from OpenAI, Google, xAI, Black Forest Labs, Kling, Luma and more.</li>
+                <li>Image generation across FLUX, Recraft, Ideogram, Nano Banana and Megsy V1.</li>
+                <li>Video with Kling, Veo, Runway Gen-4 and Megsy Video — camera control included.</li>
+                <li>AI Cinema Studio: script to scene with lip-sync, voice acting, consistent characters.</li>
+                <li>Canvas editor, inpaint and outpaint, upscaling, background removal.</li>
+                <li>Voice, soundtracks and multilingual voiceover from a single prompt.</li>
+                <li>Slides, documents and deep research reports with traceable sources.</li>
+                <li>Megsy Build: describe a product, get a production React + TypeScript + Tailwind app with database, auth, storage and edge functions.</li>
+              </ul>
+            </div>
+          </RevealSection>
+
+          <RevealSection className="content__company">
+            <div className="content__grid content__grid--split">
+              <div>
+                <h3>The company</h3>
+                <p>
+                  Megsy is an Egyptian technology company founded in 2026 and operating from Cairo.
+                  It is led by a single chief executive —{" "}
+                  <strong>Hamza Hassan</strong>, founder and CEO.
+                </p>
+                <p>
+                  An Egyptian entrepreneur who started coding at 15 and shipped his first product at
+                  17, Hamza founded Megsy to build AI infrastructure from Egypt for the world: models
+                  and products that complete real tasks on a user&apos;s behalf rather than only
+                  answering questions.
+                </p>
+              </div>
+              <div className="values">
+                <h4>How we work</h4>
+                <ul>
+                  <li>A small team that ships directly: research, engineering, design and support.</li>
+                  <li>Reliability over novelty. Clear pricing. Data handled with restraint.</li>
+                  <li>Fast on an average phone and an average connection — that is the bar.</li>
+                </ul>
+                <h4>Where we are going</h4>
+                <p>
+                  Scaling one unified workspace to creators and businesses globally, then
+                  autonomous agents that carry tasks end to end — with Egypt as the base the
+                  infrastructure is built from.
+                </p>
+              </div>
+            </div>
+          </RevealSection>
+
+          <RevealSection className="content__contact">
+            <h3>Contact</h3>
+            <div className="contact-grid">
+              <a className="contact-card" href="mailto:support@megsyai.com">
+                <span className="contact-card__label">Support</span>
+                <span className="contact-card__value">support@megsyai.com</span>
+              </a>
+              <a className="contact-card" href="https://www.megsyai.com/" target="_blank" rel="noreferrer">
+                <span className="contact-card__label">Product</span>
+                <span className="contact-card__value">megsyai.com</span>
+              </a>
+            </div>
+          </RevealSection>
+
+          <RevealSection className="content__legal" lang="ar" dir="rtl">
+            <h3>الجهة المسؤولة قانونيًا</h3>
+            <p>
+              <strong>ميغسي لتطوير المنصات الرقمية والتجارة الإلكترونية — شركة ذات مسؤولية محدودة</strong>
+            </p>
+            <p>
+              ٥٨ شارع الحجاز، برج آمون، أمام مستشفى هليوبوليس، وحدة ٨٤، الدور ٨، شياخة شيراتون
+              المطار، قسم النزهة، محافظة القاهرة، مصر
+            </p>
+            <p>
+              سجل تجاري: <strong>284691</strong> · رقم ضريبي: <strong>774034785</strong>
+            </p>
+            <p>
+              <a href="mailto:support@megsyai.com">support@megsyai.com</a>
+            </p>
+          </RevealSection>
+
+          <footer className="content__footer">
+            <span>© {new Date().getFullYear()} Megsy. All rights reserved.</span>
+          </footer>
+        </article>
       </main>
     </div>
   );
