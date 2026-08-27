@@ -89,6 +89,20 @@
   }
 }
 
+/* ---------- ticker ---------- */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 35s linear infinite;
+}
+
 /* ---------- utilities ---------- */
 @layer utilities {
   .glass {
