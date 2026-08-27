@@ -147,7 +147,7 @@ function Backdrop() {
   const y = useTransform(scrollY, [0, 900], [0, reduced ? 0 : 140]);
 
   return (
-    <motion.div style={{ y }} className="pointer-events-none absolute inset-0 -z-10">
+    <motion.div style={{ y }} className="pointer-events-none absolute inset-0 z-0">
       <div className="absolute inset-0 grid-lines" />
       <div className="absolute inset-0 veil" />
       <div className="absolute -left-24 top-1/4 h-[36rem] w-[36rem] rounded-full bg-primary/10 blur-[140px]" />
@@ -201,7 +201,7 @@ function Hero() {
       className="noise-overlay relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-5 pb-24 pt-32 sm:px-8"
     >
       <Backdrop />
-      <div className="mx-auto w-full max-w-6xl">
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -270,7 +270,7 @@ function Hero() {
         </motion.ul>
       </div>
 
-      <div className="mx-auto mt-16 w-full max-w-6xl">
+      <div className="relative z-10 mx-auto mt-16 w-full max-w-6xl">
         <div className="glass-soft overflow-hidden rounded-2xl">
           <div className="flex w-max animate-marquee-left items-center gap-10 py-3 pl-10 text-xs uppercase tracking-[0.2em] text-muted-foreground">
             {[...MARQUEE, ...MARQUEE].map((item, i) => (
