@@ -371,10 +371,6 @@
   font-weight: 500;
   letter-spacing: -0.025em;
 }
-.tg__cardIndex {
-  font-size: 0.75rem;
-  color: rgba(0, 0, 0, 0.4);
-}
 .tg__cardBody {
   display: flex;
   flex-direction: column;

@@ -253,9 +253,8 @@ export default function CompanyGlass() {
             <span className="tg__cardCircle" aria-hidden="true" />
 
             <div>
-              <div className="tg__head">
+            <div className="tg__head">
                 <h3 className="tg__cardTitle">Legal &amp; registry</h3>
-                <span className="tg__cardIndex">//01</span>
               </div>
               <div className="tg__cardBody">
                 {FACTS.map((f) => (
