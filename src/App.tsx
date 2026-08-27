@@ -3,13 +3,9 @@ import CompanyGlass from "./components/CompanyGlass";
 import { motion } from "framer-motion";
 import {
   Boxes,
-  Cpu,
-  CreditCard,
   Gauge,
-  LifeBuoy,
   Mail,
   MapPin,
-  Palette,
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
@@ -24,32 +20,26 @@ const NAV = [
 
 const CAPABILITIES = [
   {
-    icon: Boxes,
     title: "Digital platform development",
     body: "We design, build and maintain our own platforms end to end — no outsourced core.",
   },
   {
-    icon: Cpu,
     title: "Applied AI research",
     body: "Research only counts when it ships. We turn models into products people use daily.",
   },
   {
-    icon: CreditCard,
     title: "Commerce infrastructure",
     body: "E-commerce systems, billing and subscription operations run in-house.",
   },
   {
-    icon: Palette,
     title: "Design systems & brand",
     body: "One design language across every product we own, maintained by the team that ships it.",
   },
   {
-    icon: LifeBuoy,
     title: "Direct customer support",
     body: "Support is handled by the engineers who wrote the code. No ticket theatre.",
   },
   {
-    icon: ShieldCheck,
     title: "Data handled with restraint",
     body: "We collect what the product needs to work, and nothing we cannot justify.",
   },
@@ -92,7 +82,7 @@ const WORK_VIDEO_URL =
 
 function Work() {
   return (
-    <section id="work" className="relative overflow-hidden border-t border-white/5 px-5 py-24 sm:px-8 sm:py-32">
+    <section id="work" className="relative overflow-hidden px-5 py-24 sm:px-8 sm:py-32">
       <video
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         aria-hidden="true"
@@ -115,11 +105,8 @@ function Work() {
           {CAPABILITIES.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.06}>
               <article className="group h-full rounded-2xl border border-white/[0.08] bg-white/[0.04] p-6 backdrop-blur-xl transition-all duration-300 hover:border-white/[0.16] hover:bg-white/[0.07]">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.05]">
-                  <item.icon className="h-4 w-4 text-primary" />
-                </div>
-                <h3 className="mt-5 text-lg font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                <h3 className="text-lg font-semibold">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
               </article>
             </Reveal>
           ))}
