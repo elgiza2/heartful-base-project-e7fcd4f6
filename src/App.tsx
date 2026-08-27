@@ -437,7 +437,9 @@ export default function App() {
         <Leadership />
         <Contact />
       </main>
-      <Footer />
+      <div className="mx-auto mt-32 max-w-7xl px-5 pb-8 md:mt-64 md:px-8">
+        <Footer />
+      </div>
     </div>
   );
 }
