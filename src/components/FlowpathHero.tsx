@@ -240,14 +240,19 @@ export default function FlowpathHero() {
       </div>
 
       {/* Logo bar */}
-      <div className="relative z-10 mt-auto flex h-20 w-full items-center border-t border-white/10 bg-black/20 backdrop-blur-md">
-        <div className="flex w-full items-center justify-center gap-10 px-5 md:gap-16">
-          <GoogleLogo />
-          <AmazonLogo />
-          <SupabaseLogo />
-          <GitHubLogo />
-          <AlibabaLogo />
-          <MegsyLogo />
+      <div className="relative z-10 mt-auto mb-8 flex w-full justify-center px-5">
+        <div className="glass-soft flex max-w-[90vw] flex-col items-center gap-4 rounded-2xl px-7 py-5 sm:flex-row sm:gap-8 sm:px-10">
+          <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/50 sm:text-[11px]">
+            Trusted by teams at
+          </span>
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+            <GoogleLogo />
+            <AmazonLogo />
+            <SupabaseLogo />
+            <GitHubLogo />
+            <AlibabaLogo />
+            <MegsyLogo />
+          </div>
         </div>
       </div>
     </section>
