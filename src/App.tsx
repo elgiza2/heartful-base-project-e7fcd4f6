@@ -14,6 +14,12 @@ import {
   Sparkles,
 } from "lucide-react";
 
+const NAV = [
+  { label: "Company", href: "#company" },
+  { label: "What we do", href: "#work" },
+  { label: "Leadership", href: "#leadership" },
+  { label: "Contact", href: "#contact" },
+];
 
 
 const CAPABILITIES = [
