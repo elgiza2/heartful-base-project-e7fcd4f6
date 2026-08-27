@@ -34,7 +34,7 @@ function Logo() {
       <img
         src="/brand-logos/megsy.png"
         alt="Megsy logo"
-        className="h-8 w-8 object-contain sm:h-9 sm:w-9"
+        className="h-9 w-9 object-contain"
       />
       <span className="text-lg font-medium tracking-tight text-white sm:text-xl">megsy</span>
     </a>
