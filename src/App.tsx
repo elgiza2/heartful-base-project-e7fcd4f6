@@ -3,13 +3,9 @@ import CompanyGlass from "./components/CompanyGlass";
 import { motion } from "framer-motion";
 import {
   Boxes,
-  Cpu,
-  CreditCard,
   Gauge,
-  LifeBuoy,
   Mail,
   MapPin,
-  Palette,
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
