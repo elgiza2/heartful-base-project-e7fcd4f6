@@ -20,32 +20,26 @@ const NAV = [
 
 const CAPABILITIES = [
   {
-    icon: Boxes,
     title: "Digital platform development",
     body: "We design, build and maintain our own platforms end to end — no outsourced core.",
   },
   {
-    icon: Cpu,
     title: "Applied AI research",
     body: "Research only counts when it ships. We turn models into products people use daily.",
   },
   {
-    icon: CreditCard,
     title: "Commerce infrastructure",
     body: "E-commerce systems, billing and subscription operations run in-house.",
   },
   {
-    icon: Palette,
     title: "Design systems & brand",
     body: "One design language across every product we own, maintained by the team that ships it.",
   },
   {
-    icon: LifeBuoy,
     title: "Direct customer support",
     body: "Support is handled by the engineers who wrote the code. No ticket theatre.",
   },
   {
-    icon: ShieldCheck,
     title: "Data handled with restraint",
     body: "We collect what the product needs to work, and nothing we cannot justify.",
   },
