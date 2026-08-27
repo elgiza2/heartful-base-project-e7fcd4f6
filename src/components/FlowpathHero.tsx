@@ -36,7 +36,7 @@ function Logo() {
   return (
     <a href="#" className="flex items-center gap-2.5">
       <img
-        src={logoAsset.url}
+        src="/brand-logos/megsy.png"
         alt="Megsy logo"
         className="h-8 w-8 object-contain sm:h-9 sm:w-9"
       />
