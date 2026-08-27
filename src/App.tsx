@@ -299,28 +299,131 @@ function Showcase() {
 
 function Footer() {
   return (
-    <footer className="relative border-t border-white/5 px-5 py-14 sm:px-8">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="font-display text-lg font-semibold">
-            MEG<span className="text-gradient">SY</span>
-          </p>
-          <p className="mt-3 max-w-md text-xs leading-relaxed text-muted-foreground">
-            Megsy for Digital Platforms Development and E-commerce LLC · Commercial register 284691
-            · Tax ID 774034785 · 58 Al Hijaz St., Amoun Tower, Unit 84, Floor 8, Sheraton Al Matar,
-            Nozha, Cairo, Egypt
+    <motion.footer
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+      className="liquid-glass mx-5 mb-8 w-full max-w-7xl rounded-3xl p-6 text-white/70 md:mx-8 md:p-10"
+    >
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
+        <div className="md:col-span-5">
+          <div className="flex items-center gap-2">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-primary"
+            >
+                <path
+                  d="M12 2L2 7L12 12L22 7L12 2Z"
+                  fill="currentColor"
+                  fillOpacity="0.2"
+                />
+                <path
+                  d="M2 17L12 22L22 17"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M2 12L12 17L22 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+            </svg>
+            <span className="font-display text-xl font-medium">
+              MEG<span className="text-gradient">SY</span>
+            </span>
+          </div>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+            Megsy builds applied AI infrastructure and digital commerce platforms from Cairo,
+            shipping end-to-end products under one roof.
           </p>
         </div>
-        <div className="flex flex-col gap-2 text-xs text-muted-foreground sm:items-end">
-          {NAV.map((item) => (
-            <a key={item.href} href={item.href} className="hover:text-foreground">
-              {item.label}
-            </a>
-          ))}
-          <span>© {new Date().getFullYear()} Megsy. All rights reserved.</span>
+
+        <div className="grid grid-cols-2 gap-10 md:col-span-7 md:grid-cols-3">
+          <div>
+            <h4 className="mb-4 text-sm font-medium uppercase tracking-wider text-white">Company</h4>
+            <ul className="space-y-2 text-xs text-muted-foreground">
+              {NAV.map((item) => (
+                <li key={item.href}>
+                  <a href={item.href} className="hover:text-white transition-colors">
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="mb-4 text-sm font-medium uppercase tracking-wider text-white">Legal</h4>
+            <ul className="space-y-2 text-xs text-muted-foreground">
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Cookie Policy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Report a Concern
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="mb-4 text-sm font-medium uppercase tracking-wider text-white">Connect</h4>
+            <ul className="space-y-2 text-xs text-muted-foreground">
+              <li>
+                <a href="mailto:support@megsyai.com" className="hover:text-white transition-colors">
+                  Get in Touch
+                </a>
+              </li>
+              <li>
+                <span>support@megsyai.com</span>
+              </li>
+              <li>
+                <span>Cairo, Egypt · UTC+2</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </footer>
+
+      <div className="mt-10 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-6 md:flex-row md:gap-4">
+        <p className="text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Megsy. All rights reserved.
+        </p>
+        <div className="flex items-center gap-4">
+          <span className="text-[10px] uppercase tracking-widest opacity-50">Follow:</span>
+          <div className="flex items-center gap-3">
+            {[Music2, Facebook, Twitter, Youtube, Instagram].map((Icon, i) => (
+              <a
+                key={i}
+                href="#"
+                className="opacity-70 transition-colors hover:text-white hover:opacity-100"
+              >
+                <Icon size={16} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.footer>
   );
 }
 
