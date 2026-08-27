@@ -239,6 +239,8 @@ function Contact() {
               className="glass-soft inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-transform hover:-translate-y-0.5"
             >
               +20 109 812 5727
+            </a>
+
 
           </div>
         </Reveal>
