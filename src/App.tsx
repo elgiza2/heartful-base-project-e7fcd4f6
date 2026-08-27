@@ -133,42 +133,37 @@ function Leadership() {
         src={LEADERSHIP_VIDEO_URL}
       />
       <div className="pointer-events-none absolute inset-0 z-[1] bg-black/30" />
-      <div className="relative z-10">
-      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
+      <div className="relative z-10 mx-auto max-w-6xl">
         <Reveal>
           <p className="eyebrow">Leadership</p>
-          <h2 className="mt-4 text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-[1.08]">
+          <h2 className="mt-4 max-w-2xl text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-[1.08]">
             One CEO. One line of accountability.
           </h2>
-          <p className="mt-6 max-w-lg text-muted-foreground">
-            Megsy is led by a single chief executive — Hamza Hassan, Founder & Chief Executive
-            Officer. An Egyptian entrepreneur who started coding at 15 and shipped his first product
-            at 17, he founded Megsy to build AI infrastructure from Egypt for the world.
-          </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            {PRINCIPLES.map((p) => (
-              <div key={p.title} className="glass-soft rounded-xl p-4">
-                <p.icon className="h-4 w-4 text-primary" />
-                <h3 className="mt-3 text-sm font-semibold">{p.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{p.body}</p>
-              </div>
-            ))}
-          </div>
         </Reveal>
-        <Reveal delay={0.1}>
-          <div className="glass rounded-2xl p-7 sm:p-9">
-            <p className="eyebrow">Office of the CEO</p>
-            <div className="mt-6 flex items-center gap-4">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-brand-blush to-primary text-lg font-semibold text-background">
-                HH
+
+        <div className="mt-12 grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <Reveal>
+            <div className="relative mx-auto max-w-sm">
+              <div className="glass overflow-hidden rounded-3xl p-2">
+                <img
+                  src="/hamza-portrait.jpg"
+                  alt="Hamza Hassan — Founder & CEO of Megsy"
+                  className="aspect-[4/5] w-full rounded-2xl object-cover"
+                />
               </div>
-              <div>
-                <p className="text-lg font-semibold">Hamza Hassan</p>
-                <p className="text-sm text-muted-foreground">
-                  Founder & Chief Executive Officer
-                </p>
+              <div className="glass absolute -bottom-5 left-1/2 w-max -translate-x-1/2 rounded-full px-6 py-3 text-center">
+                <p className="text-sm font-semibold">Hamza Hassan</p>
+                <p className="text-xs text-muted-foreground">Founder & Chief Executive Officer</p>
               </div>
             </div>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
+              Megsy is led by a single chief executive — Hamza Hassan, Founder & Chief Executive
+              Officer. An Egyptian entrepreneur who started coding at 15 and shipped his first
+              product at 17, he founded Megsy to build AI infrastructure from Egypt for the world.
+            </p>
             <div className="mt-8 space-y-3 text-sm text-muted-foreground">
               <p className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary" /> Cairo, Egypt
@@ -180,13 +175,20 @@ function Leadership() {
                 </a>
               </p>
             </div>
-            <p className="mt-8 border-t border-white/10 pt-6 text-sm leading-relaxed text-muted-foreground">
-              How we work: a small team that ships directly, with no layers in between. Reliability
-              over novelty. Clear pricing. Fast on an average phone and an average connection — that
-              is the bar.
-            </p>
-          </div>
-        </Reveal>
+            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+              {PRINCIPLES.map((p) => (
+                <div
+                  key={p.title}
+                  className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-5 backdrop-blur-xl transition-all duration-300 hover:border-white/[0.16] hover:bg-white/[0.07]"
+                >
+                  <p.icon className="h-4 w-4 text-primary" />
+                  <h3 className="mt-3 text-sm font-semibold">{p.title}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{p.body}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
