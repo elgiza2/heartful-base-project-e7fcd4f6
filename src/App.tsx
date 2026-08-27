@@ -87,10 +87,26 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
+const WORK_VIDEO_URL =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4";
+
 function Work() {
   return (
-    <section id="work" className="relative border-t border-white/5 px-5 py-24 sm:px-8 sm:py-32">
-      <div className="mx-auto max-w-6xl">
+    <section id="work" className="relative overflow-hidden border-t border-white/5 px-5 py-24 sm:px-8 sm:py-32">
+      <video
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        aria-hidden="true"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        src={WORK_VIDEO_URL}
+      />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-background/80" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-background via-transparent to-background" />
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         <Reveal>
           <p className="eyebrow">What we do</p>
           <h2 className="mt-4 max-w-2xl text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-[1.08]">
