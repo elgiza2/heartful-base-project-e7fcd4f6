@@ -114,8 +114,8 @@ function Work() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {CAPABILITIES.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.06}>
-              <article className="group h-full rounded-2xl border border-white/10 bg-black/40 p-6 transition-all duration-300 hover:border-white/20 hover:bg-black/50">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5">
+              <article className="group h-full rounded-2xl border border-white/[0.08] bg-white/[0.04] p-6 backdrop-blur-xl transition-all duration-300 hover:border-white/[0.16] hover:bg-white/[0.07]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.05]">
                   <item.icon className="h-4 w-4 text-primary" />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold">{item.title}</h3>
