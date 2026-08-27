@@ -101,12 +101,7 @@ export default function FlowpathHero() {
         loop
         playsInline
       />
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "linear-gradient(180deg, rgba(3,7,10,0.75) 0%, rgba(3,7,10,0.25) 45%, rgba(170,194,206,0.35) 100%)",
-        }}
-      />
+      <div className="absolute inset-0 bg-black/20" />
 
       {/* Nav */}
       <nav className="relative z-20 w-full px-5 py-4 sm:px-6 sm:py-5 md:px-12 lg:px-16">
