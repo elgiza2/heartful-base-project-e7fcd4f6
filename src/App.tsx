@@ -297,133 +297,129 @@ function Showcase() {
   );
 }
 
+const FOOTER_VIDEO_URL =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260429_114316_1c7889ad-2885-410e-b493-98119fee0ddb.mp4";
+
 function Footer() {
   return (
-    <motion.footer
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-      className="liquid-glass w-full rounded-3xl p-6 text-white/70 md:p-10"
-    >
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
-        <div className="md:col-span-5">
-          <div className="flex items-center gap-2">
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-primary"
-            >
-                <path
-                  d="M12 2L2 7L12 12L22 7L12 2Z"
-                  fill="currentColor"
-                  fillOpacity="0.2"
-                />
-                <path
-                  d="M2 17L12 22L22 17"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M2 12L12 17L22 12"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-            </svg>
-            <span className="font-display text-xl font-medium">
-              MEG<span className="text-gradient">SY</span>
-            </span>
-          </div>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Megsy builds applied AI infrastructure and digital commerce platforms from Cairo,
-            shipping end-to-end products under one roof.
-          </p>
-        </div>
+    <section className="relative overflow-hidden px-5 py-16 sm:px-8 md:py-24">
+      <video
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        aria-hidden="true"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        src={FOOTER_VIDEO_URL}
+      />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-black/40" />
 
-        <div className="grid grid-cols-2 gap-10 md:col-span-7 md:grid-cols-3">
-          <div>
-            <h4 className="mb-4 text-sm font-medium uppercase tracking-wider text-white">Company</h4>
-            <ul className="space-y-2 text-xs text-muted-foreground">
-              {NAV.map((item) => (
-                <li key={item.href}>
-                  <a href={item.href} className="hover:text-white transition-colors">
-                    {item.label}
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <motion.footer
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+          className="liquid-glass w-full rounded-3xl p-6 text-white/70 md:p-10"
+        >
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
+            <div className="md:col-span-5">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/brand-logos/megsy.png"
+                  alt="Megsy"
+                  className="h-8 w-auto"
+                />
+                <span className="font-display text-xl font-medium">
+                  MEG<span className="text-gradient">SY</span>
+                </span>
+              </div>
+              <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+                Megsy builds applied AI infrastructure and digital commerce platforms from Cairo,
+                shipping end-to-end products under one roof.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-10 md:col-span-7 md:grid-cols-3">
+              <div>
+                <h4 className="mb-4 text-sm font-medium uppercase tracking-wider text-white">Company</h4>
+                <ul className="space-y-2 text-xs text-muted-foreground">
+                  {NAV.map((item) => (
+                    <li key={item.href}>
+                      <a href={item.href} className="hover:text-white transition-colors">
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="mb-4 text-sm font-medium uppercase tracking-wider text-white">Legal</h4>
+                <ul className="space-y-2 text-xs text-muted-foreground">
+                  <li>
+                    <a href="#" className="hover:text-white transition-colors">
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-white transition-colors">
+                      Terms of Service
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-white transition-colors">
+                      Cookie Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-white transition-colors">
+                      Report a Concern
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="mb-4 text-sm font-medium uppercase tracking-wider text-white">Connect</h4>
+                <ul className="space-y-2 text-xs text-muted-foreground">
+                  <li>
+                    <a href="mailto:support@megsyai.com" className="hover:text-white transition-colors">
+                      Get in Touch
+                    </a>
+                  </li>
+                  <li>
+                    <span>support@megsyai.com</span>
+                  </li>
+                  <li>
+                    <span>Cairo, Egypt · UTC+2</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-6 md:flex-row md:gap-4">
+            <p className="text-xs text-muted-foreground">
+              © {new Date().getFullYear()} Megsy. All rights reserved.
+            </p>
+            <div className="flex items-center gap-4">
+              <span className="text-[10px] uppercase tracking-widest opacity-50">Follow:</span>
+              <div className="flex items-center gap-3">
+                {[Music2, Facebook, Twitter, Youtube, Instagram].map((Icon, i) => (
+                  <a
+                    key={i}
+                    href="#"
+                    className="opacity-70 transition-colors hover:text-white hover:opacity-100"
+                  >
+                    <Icon size={16} />
                   </a>
-                </li>
-              ))}
-            </ul>
+                ))}
+              </div>
+            </div>
           </div>
-          <div>
-            <h4 className="mb-4 text-sm font-medium uppercase tracking-wider text-white">Legal</h4>
-            <ul className="space-y-2 text-xs text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Cookie Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Report a Concern
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-4 text-sm font-medium uppercase tracking-wider text-white">Connect</h4>
-            <ul className="space-y-2 text-xs text-muted-foreground">
-              <li>
-                <a href="mailto:support@megsyai.com" className="hover:text-white transition-colors">
-                  Get in Touch
-                </a>
-              </li>
-              <li>
-                <span>support@megsyai.com</span>
-              </li>
-              <li>
-                <span>Cairo, Egypt · UTC+2</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        </motion.footer>
       </div>
-
-      <div className="mt-10 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-6 md:flex-row md:gap-4">
-        <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Megsy. All rights reserved.
-        </p>
-        <div className="flex items-center gap-4">
-          <span className="text-[10px] uppercase tracking-widest opacity-50">Follow:</span>
-          <div className="flex items-center gap-3">
-            {[Music2, Facebook, Twitter, Youtube, Instagram].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="opacity-70 transition-colors hover:text-white hover:opacity-100"
-              >
-                <Icon size={16} />
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </motion.footer>
+    </section>
   );
 }
 
