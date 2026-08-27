@@ -464,7 +464,12 @@ export default function App() {
                 aria-label="Close panel"
                 onClick={() => setPanel(null)}
               />
-              <aside className="sheet" role="dialog" aria-modal="true" aria-label={PANEL_CONTENT[panel].title}>
+              <aside
+                className="sheet"
+                role="dialog"
+                aria-modal="true"
+                aria-label={panel === "menu" ? "Menu" : PANEL_CONTENT[panel].title}
+              >
                 <button
                   type="button"
                   className="sheet__close"
@@ -473,11 +478,29 @@ export default function App() {
                 >
                   ✕
                 </button>
-                <h2>{PANEL_CONTENT[panel].title}</h2>
-                {PANEL_CONTENT[panel].body}
+                {panel === "menu" ? (
+                  <>
+                    <h2>Menu</h2>
+                    <ul className="sheet__menu">
+                      {navItems.map((item) => (
+                        <li key={item.key}>
+                          <button type="button" onClick={() => setPanel(item.key)}>
+                            {item.label}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <>
+                    <h2>{PANEL_CONTENT[panel].title}</h2>
+                    {PANEL_CONTENT[panel].body}
+                  </>
+                )}
               </aside>
             </>
           )}
+
         </section>
       </main>
     </div>
