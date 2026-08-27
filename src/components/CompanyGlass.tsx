@@ -211,12 +211,6 @@ export default function CompanyGlass() {
       <Rule side="right" />
 
       <div className="tg__inner">
-        <div className="tg__bar">
-          <a className="tg__barItem" href="mailto:support@megsyai.com">
-            <span className="tg__barLabel">support@megsyai.com</span>
-          </a>
-        </div>
-
         <div className="tg__bottom">
           <div className="tg__lede">
             <span className="tg__eyebrow">The company</span>
