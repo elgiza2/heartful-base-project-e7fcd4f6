@@ -56,45 +56,8 @@ function drawMorphBlob(
   ctx.fill();
 }
 
-function useScrollReveal<T extends HTMLElement>() {
-  const ref = useRef<T>(null);
-  const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
-  return { ref, visible };
-}
-
-function RevealSection({
-  children,
-  className = "",
-  ...rest
-}: React.HTMLAttributes<HTMLElement>) {
-  const { ref, visible } = useScrollReveal<HTMLElement>();
-  return (
-    <section
-      ref={ref}
-      className={`reveal ${visible ? "reveal--in" : ""} ${className}`.trim()}
-      {...rest}
-    >
-      {children}
-    </section>
-  );
-}
 
 export default function App() {
   const stageRef = useRef<HTMLDivElement>(null);
@@ -322,92 +285,10 @@ export default function App() {
           </div>
         </section>
 
-        <article className="content">
-          <RevealSection className="content__intro">
-            <h2>The company behind Megsy.</h2>
-            <p>
-              Megsy for Digital Platforms Development and E-commerce LLC is an Egyptian technology
-              company registered and operating in Cairo. We design, build and run our own products
-              end to end — research, engineering, design and support under one roof.
-            </p>
-          </RevealSection>
-
-          <RevealSection className="content__platform">
-            <div className="content__grid">
-              <div>
-                <h3>What we do</h3>
-                <p>
-                  We build applied AI software and the digital commerce infrastructure around it:
-                  product engineering, platform operations, and the systems that let a small team
-                  ship at scale.
-                </p>
-              </div>
-              <ul className="feature-list">
-                <li>Digital platform development and maintenance.</li>
-                <li>Applied AI research turned into shippable product.</li>
-                <li>E-commerce systems, billing and subscription operations.</li>
-                <li>Design systems and brand work for our own products.</li>
-                <li>Direct customer support, handled by the team that builds.</li>
-              </ul>
-            </div>
-          </RevealSection>
-
-          <RevealSection className="content__company">
-            <div className="content__grid content__grid--split">
-              <div>
-                <h3>Leadership</h3>
-                <p>
-                  Megsy is led by a single chief executive. There is one CEO —{" "}
-                  <strong>Hamza Hassan</strong>, Founder &amp; Chief Executive Officer.
-                </p>
-                <p>
-                  An Egyptian entrepreneur who started coding at 15 and shipped his first product at
-                  17, he founded Megsy to build AI infrastructure from Egypt for the world.
-                </p>
-              </div>
-              <div className="values">
-                <h4>Office of the CEO</h4>
-                <ul>
-                  <li>
-                    <strong>Hamza Hassan</strong> — Founder &amp; Chief Executive Officer
-                  </li>
-                  <li>Cairo, Egypt · support@megsyai.com</li>
-                </ul>
-                <h4>How we work</h4>
-                <ul>
-                  <li>A small team that ships directly, with no layers in between.</li>
-                  <li>Reliability over novelty. Clear pricing. Data handled with restraint.</li>
-                  <li>Fast on an average phone and an average connection — that is the bar.</li>
-                </ul>
-              </div>
-            </div>
-          </RevealSection>
-        </article>
-
         <OperationsSection />
         <CompanySection />
         <ShowcaseSection />
 
-        <article className="content">
-          <RevealSection className="content__legal">
-            <h3>Legal entity</h3>
-            <p>
-              <strong>
-                Megsy for Digital Platforms Development and E-commerce — Limited Liability Company
-              </strong>
-            </p>
-            <p>
-              58 Al Hijaz St., Amoun Tower, opposite Heliopolis Hospital, Unit 84, Floor 8, Sheraton
-              Al Matar, Nozha District, Cairo Governorate, Egypt
-            </p>
-            <p>
-              Commercial Register: <strong>284691</strong> · Tax ID: <strong>774034785</strong>
-            </p>
-            <p>
-              <a href="mailto:support@megsyai.com">support@megsyai.com</a>
-            </p>
-          </RevealSection>
-        </article>
 
         <SiteFooter />
       </main>

@@ -15,29 +15,106 @@
   --cards-scale: min(1, calc(60cqh / var(--cards-height)));
   position: relative;
   width: 100%;
-  height: 100svh;
-  min-height: 640px;
   background: var(--page);
   color: var(--ink);
-  container-type: size;
+  container-type: inline-size;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2rem, 4cqw, 4rem);
+  padding-block: clamp(3rem, 6cqw, 6.5rem);
   font-family: "Segoe UI Variable", "Segoe UI", Arial, Helvetica, sans-serif;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
 }
 
+.tri__head {
+  width: min(81.71cqw, 68rem);
+  padding-inline: 1.25rem;
+}
+.tri__eyebrow {
+  font-size: clamp(0.62rem, 1.1cqw, 0.78rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin: 0 0 0.9rem;
+}
+.tri__head h2 {
+  font-size: clamp(1.6rem, 3.4cqw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  margin: 0;
+  max-width: 24ch;
+}
+.tri__head p {
+  margin: 1rem 0 0;
+  max-width: 62ch;
+  font-size: clamp(0.86rem, 1.35cqw, 1.05rem);
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.tri__doing {
+  width: min(81.71cqw, 68rem);
+  padding-inline: 1.25rem;
+  display: grid;
+  gap: clamp(1.25rem, 3cqw, 2.5rem);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+@media (max-width: 56rem) {
+  .tri__doing {
+    grid-template-columns: 1fr;
+  }
+}
+.tri__doing h3 {
+  margin: 0 0 0.7rem;
+  font-size: clamp(1.1rem, 2cqw, 1.6rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.tri__doing p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.84rem, 1.3cqw, 1rem);
+  line-height: 1.65;
+}
+.tri__doing ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+.tri__doing li {
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  font-size: clamp(0.84rem, 1.25cqw, 1rem);
+  line-height: 1.5;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgb(40 40 40 / 9%);
+}
+.tri__doing li::before {
+  content: "";
+  flex: none;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--orange);
+  transform: translateY(-0.15em);
+}
+
 .tri__cards {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
+  position: relative;
+  scale: 1;
   width: 81.71cqw;
   height: var(--cards-height);
   display: grid;
   grid-template-columns: 32.33% 32.33% 31.7%;
   justify-content: space-between;
   align-items: start;
-  scale: var(--cards-scale);
 }
 
 .tri .card {
@@ -504,17 +581,9 @@
 @media (max-width: 32rem),
   (max-height: 28rem) and (max-width: 64rem) and (pointer: coarse) {
   .tri {
-    height: auto;
-    container-type: inline-size;
     overflow: visible;
-    padding-block: clamp(2rem, 8cqw, 4rem);
   }
   .tri__cards {
-    position: relative;
-    top: auto;
-    left: auto;
-    translate: none;
-    scale: 1;
     width: min(90cqw, 26rem);
     margin-inline: auto;
     height: auto;
