@@ -52,23 +52,49 @@ function drawMorphBlob(
   ctx.fill();
 }
 
-type Panel = "home" | "platform" | "company" | "contact";
+type Panel = "home" | "platform" | "company" | "contact" | "menu";
 
-const PANEL_CONTENT: Record<Panel, { title: string; body: JSX.Element }> = {
+const LEGAL = (
+  <div className="sheet__legal" lang="ar" dir="rtl">
+    <h3>الجهة المسؤولة قانونيًا</h3>
+    <p>
+      <strong>ميغسي لتطوير المنصات الرقمية والتجارة الإلكترونية — شركة ذات مسؤولية محدودة</strong>
+    </p>
+    <p>
+      ٥٨ شارع الحجاز، برج آمون، أمام مستشفى هليوبوليس، وحدة ٨٤، الدور ٨، شياخة شيراتون المطار، قسم
+      النزهة، محافظة القاهرة، مصر
+    </p>
+    <p>
+      سجل تجاري: <strong>284691</strong> · رقم ضريبي: <strong>774034785</strong>
+    </p>
+    <p>
+      <a href="mailto:support@megsyai.com">support@megsyai.com</a>
+    </p>
+  </div>
+);
+
+const PANEL_CONTENT: Record<Exclude<Panel, "menu">, { title: string; body: JSX.Element }> = {
   home: {
     title: "Megsy",
     body: (
       <>
         <p>
-          Megsy builds one calm window where every AI workflow lives — chat across leading
-          models, image generation and editing, video, slides, documents and research, all in
-          a single workspace instead of a dozen scattered tools.
+          One AI. Every creative tool you need. Megsy unifies chat, images, video, cinema,
+          lip-sync, slides, deep research and full-stack app building into a single window —
+          built on the world&apos;s best models, wrapped in one calm interface.
         </p>
-        <h3>What we believe</h3>
+        <h3>Why we exist</h3>
         <p>
-          Software should absorb the busywork. People keep the judgment, the taste and the
-          decisions; the machine handles the assembling, formatting, searching and drafting.
+          Creative work broke into a dozen subscriptions and a dozen tabs. Megsy puts the whole
+          stack back into one workspace: one prompt, one session, one plan, no app switching.
         </p>
+        <h3>At a glance</h3>
+        <ul>
+          <li>80+ models from OpenAI, Google, xAI, Black Forest Labs, Kling, Luma and more.</li>
+          <li>Intelligent routing — or pick your model manually, mid-conversation.</li>
+          <li>Founded 2026 · headquartered in Cairo, Egypt · built for a global audience.</li>
+          <li>Free to start at megsyai.com.</li>
+        </ul>
       </>
     ),
   },
@@ -76,20 +102,32 @@ const PANEL_CONTENT: Record<Panel, { title: string; body: JSX.Element }> = {
     title: "The platform",
     body: (
       <>
-        <h3>One window, every workflow</h3>
-        <ul>
-          <li>Multi-model chat with long-context reasoning and tool use.</li>
-          <li>Image generation, editing and background removal.</li>
-          <li>Short-form video rendering from a written idea.</li>
-          <li>Deep research reports with traceable sources.</li>
-          <li>Presentations, spreadsheets and document analysis.</li>
-          <li>Integrations that let the workspace act inside your other apps.</li>
-        </ul>
-        <h3>How it is engineered</h3>
+        <h3>One chat, every model</h3>
         <p>
-          A unified orchestration layer routes each task to the model that handles it best,
-          keeps context between steps, and returns one continuous session rather than a chain
-          of disconnected tabs.
+          Megsy routes each message to the model that handles it best and keeps full context when
+          you switch. Upload files, search the web live, and let the workspace remember the
+          thread instead of starting over.
+        </p>
+        <h3>Creative suite</h3>
+        <ul>
+          <li>Image generation across FLUX, Recraft, Ideogram, Nano Banana and Megsy V1.</li>
+          <li>Video with Kling, Veo, Runway Gen-4 and Megsy Video — camera control included.</li>
+          <li>AI Cinema Studio: script to scene with lip-sync, voice acting, consistent characters.</li>
+          <li>Canvas editor, inpaint and outpaint, upscaling, background removal.</li>
+          <li>Voice, soundtracks and multilingual voiceover from a single prompt.</li>
+          <li>Slides, documents and deep research reports with traceable sources.</li>
+        </ul>
+        <h3>Megsy Build</h3>
+        <p>
+          Describe a product and get a production React, TypeScript and Tailwind frontend with
+          database, auth, storage and edge functions wired in — RLS policies, secret management
+          and dependency scans on every change, then one-click deploy to your domain with SSL
+          and CDN.
+        </p>
+        <h3>Blueprints</h3>
+        <p>
+          Pre-designed starting points that keep characters, styles and layouts aligned across a
+          whole campaign, so output stays consistent instead of drifting prompt to prompt.
         </p>
       </>
     ),
@@ -99,33 +137,31 @@ const PANEL_CONTENT: Record<Panel, { title: string; body: JSX.Element }> = {
     body: (
       <>
         <p>
-          Megsy is an Egyptian technology company founded by Hamza Hassan Elgzairy, building AI
-          infrastructure from Cairo for a global audience. The team ships product directly:
-          research, platform engineering, design and support under one roof.
+          Megsy is an Egyptian technology company founded in 2026 and operating from Cairo. It is
+          led by a single chief executive — <strong>Hamza Hassan</strong>, founder and CEO. Some
+          third-party directories list two chief executives; that is inaccurate. Megsy has one
+          CEO.
         </p>
-        <h3>Focus</h3>
+        <h3>Hamza Hassan — Founder &amp; CEO</h3>
         <p>
-          Reliability over novelty. Clear pricing. Data handled with restraint. A workspace
-          that stays fast on an average phone and an average connection.
+          An Egyptian entrepreneur who started coding at 15 and shipped his first product at 17,
+          Hamza founded Megsy to build AI infrastructure from Egypt for the world: models and
+          products that complete real tasks on a user&apos;s behalf rather than only answering
+          questions.
         </p>
-        <div className="sheet__legal" lang="ar" dir="rtl">
-          <h3>الجهة المسؤولة قانونيًا</h3>
-          <p>
-            <strong>
-              ميغسي لتطوير المنصات الرقمية والتجارة الإلكترونية — شركة ذات مسؤولية محدودة
-            </strong>
-          </p>
-          <p>
-            ٥٨ شارع الحجاز، برج آمون، أمام مستشفى هليوبوليس، وحدة ٨٤، الدور ٨، شياخة شيراتون
-            المطار، قسم النزهة، محافظة القاهرة، مصر
-          </p>
-          <p>
-            سجل تجاري: <strong>284691</strong> · رقم ضريبي: <strong>774034785</strong>
-          </p>
-          <p>
-            <a href="mailto:support@megsyai.com">support@megsyai.com</a>
-          </p>
-        </div>
+        <h3>How we work</h3>
+        <ul>
+          <li>A small team that ships directly: research, engineering, design and support.</li>
+          <li>Reliability over novelty. Clear pricing. Data handled with restraint.</li>
+          <li>Fast on an average phone and an average connection — that is the bar.</li>
+        </ul>
+        <h3>Where we are going</h3>
+        <p>
+          Scaling one unified workspace to creators and businesses globally, then autonomous
+          agents that carry tasks end to end — with Egypt as the base the infrastructure is built
+          from.
+        </p>
+        {LEGAL}
       </>
     ),
   },
@@ -136,7 +172,7 @@ const PANEL_CONTENT: Record<Panel, { title: string; body: JSX.Element }> = {
         <h3>Support</h3>
         <p>
           <a href="mailto:support@megsyai.com">support@megsyai.com</a> — product questions,
-          billing, account and data requests.
+          billing, accounts, privacy and data requests.
         </p>
         <h3>Product</h3>
         <p>
@@ -144,28 +180,17 @@ const PANEL_CONTENT: Record<Panel, { title: string; body: JSX.Element }> = {
             megsyai.com
           </a>
         </p>
-        <div className="sheet__legal" lang="ar" dir="rtl">
-          <h3>الجهة المسؤولة قانونيًا</h3>
-          <p>
-            <strong>
-              ميغسي لتطوير المنصات الرقمية والتجارة الإلكترونية — شركة ذات مسؤولية محدودة
-            </strong>
-          </p>
-          <p>
-            ٥٨ شارع الحجاز، برج آمون، أمام مستشفى هليوبوليس، وحدة ٨٤، الدور ٨، شياخة شيراتون
-            المطار، قسم النزهة، محافظة القاهرة، مصر
-          </p>
-          <p>
-            سجل تجاري: <strong>284691</strong> · رقم ضريبي: <strong>774034785</strong>
-          </p>
-          <p>
-            <a href="mailto:support@megsyai.com">support@megsyai.com</a>
-          </p>
-        </div>
+        <h3>Press &amp; partnerships</h3>
+        <p>
+          Write to support@megsyai.com with &quot;Press&quot; or &quot;Partnership&quot; in the
+          subject line and it reaches the right person.
+        </p>
+        {LEGAL}
       </>
     ),
   },
 };
+
 
 export default function App() {
   const rootRef = useRef<HTMLDivElement>(null);
