@@ -212,16 +212,17 @@ export default function FlowpathHero() {
       <div className="relative z-10 flex flex-1 items-start justify-center px-5 pt-16 sm:pt-20 md:pt-24">
         <div className="max-w-3xl text-center">
           <h1 className="text-3xl leading-[1.05] tracking-[-0.02em] text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-            Applied AI,
+            One workspace
             <br />
-            built end to end
+            instead of ten
             <br />
-            from Cairo.
+            subscriptions.
           </h1>
           <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-white/80 sm:mt-8 sm:text-base md:text-lg">
-            Megsy is an Egyptian technology company. We design, build and run our own products —
-            research, engineering, design and support under one roof.
+            Megsy is an Egyptian software company building unified, product-led AI workspaces —
+            engineered, operated and supported by the same small team in Cairo.
           </p>
+
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:mt-8 sm:gap-4">
             <a
               href="#company"
