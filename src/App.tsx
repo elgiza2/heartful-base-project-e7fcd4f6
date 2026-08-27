@@ -187,23 +187,19 @@ function Leadership() {
   );
 }
 
-const CONTACT_VIDEO_URL =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_064209_0cb7d815-ff61-4caa-a6d5-bbff145ab272.mp4";
-
 function Contact() {
   return (
     <section id="contact" className="relative overflow-hidden px-5 py-24 sm:px-8 sm:py-32">
-      <video
+      <img
+        src="/pyramids.jpg"
+        alt="Giza pyramids at twilight"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         aria-hidden="true"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        src={CONTACT_VIDEO_URL}
+        loading="lazy"
+        width={1920}
+        height={1080}
       />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-black/30" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-black/40" />
 
       <div className="relative z-10 mx-auto max-w-6xl">
         <Reveal>
