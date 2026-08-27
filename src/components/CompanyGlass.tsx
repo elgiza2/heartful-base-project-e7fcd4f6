@@ -9,7 +9,7 @@ const WAVE_D =
 
 const FACTS = [
   {
-    title: "Registered entity",
+    title: "Legal name",
     text: "Megsy for Digital Platforms Development and E-commerce LLC — an Egyptian limited liability company registered and operating in Cairo.",
   },
   {
@@ -278,7 +278,7 @@ export default function CompanyGlass() {
 
             <div>
               <div className="tg__head">
-                <h3 className="tg__cardTitle">Registered entity</h3>
+                <h3 className="tg__cardTitle">Legal &amp; registry</h3>
                 <span className="tg__cardIndex">//01</span>
               </div>
               <div className="tg__cardBody">
