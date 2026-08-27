@@ -319,7 +319,7 @@ function AlibabaLogo() {
 function MegsyLogo() {
   return (
     <img
-      src="/model-logos/megsy.png"
+      src={logoAsset.url}
       alt="Megsy"
       className="h-5 w-auto object-contain sm:h-6"
     />
