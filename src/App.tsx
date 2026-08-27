@@ -212,10 +212,10 @@ function Contact() {
               Partnerships, press, billing or legal — every message reaches the team directly.
             </p>
             <div className="relative mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href="mailto:support@megsyaiai.com"
-                className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
-              >
+                <a
+                  href="mailto:support@megsyai.com"
+                  className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+                >
                 <Mail className="h-4 w-4" /> support@megsyai.com
               </a>
               <span className="text-sm text-muted-foreground">Cairo, Egypt · UTC+2</span>
