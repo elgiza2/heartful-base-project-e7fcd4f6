@@ -7,14 +7,14 @@ const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
 const VIDEO_URL =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_151818_65bb22c5-33ae-4e23-85ea-0a3dd89957c2.mp4";
 
-const MEGSY_PRODUCT = {
-  name: "Megsy Workspace",
-  size: "One subscription / every model",
+const MEGSY_COMPANY = {
+  name: "Megsy",
+  size: "Digital Platforms Development & E-commerce LLC",
   image:
     "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260511_151621_4fba6892-ed21-4c2e-8cb3-0bd2ec2abefa.png&w=1280&q=85",
   notes: [
-    { label: "Research", ingredient: "APPLIED AI RESEARCH" },
-    { label: "Product", ingredient: "UNIFIED CREATIVE WORKSPACE" },
+    { label: "Focus", ingredient: "APPLIED AI & DIGITAL COMMERCE" },
+    { label: "Approach", ingredient: "END-TO-END PRODUCT OWNERSHIP" },
     { label: "Base", ingredient: "CAIRO, EGYPT" },
   ],
 };
@@ -60,10 +60,10 @@ function ProductPanel({
         {...anim(visible, 0, { y: 12, duration: 1400 })}
       >
         <span className="text-xs font-normal" style={{ color: TEXT_COLOR }}>
-          {noteStyle === "bold" ? "Megsy company" : "Megsy platform"}
+          Megsy company
         </span>
         <span className="text-xs font-normal" style={{ color: TEXT_COLOR }}>
-          {noteStyle === "bold" ? "Independent" : "Focused"}
+          Independent
         </span>
       </div>
 
@@ -183,8 +183,8 @@ export default function ShowcaseSection() {
 
         <ProductPanel
           bg={BG_LIME}
-          product={MEGSY_PRODUCT}
-          notes={MEGSY_PRODUCT.notes}
+          product={MEGSY_COMPANY}
+          notes={MEGSY_COMPANY.notes}
           visible={visible}
           noteStyle="bold"
         />
