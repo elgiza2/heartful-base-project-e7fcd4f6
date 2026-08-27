@@ -3,7 +3,6 @@ import CompanyGlass from "./components/CompanyGlass";
 import { motion } from "framer-motion";
 import {
   Boxes,
-  Building2,
   Cpu,
   CreditCard,
   Gauge,
