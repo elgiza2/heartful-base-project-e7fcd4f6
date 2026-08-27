@@ -304,7 +304,7 @@ function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-      className="liquid-glass mx-5 mb-8 w-full max-w-7xl rounded-3xl p-6 text-white/70 md:mx-8 md:p-10"
+      className="liquid-glass w-full rounded-3xl p-6 text-white/70 md:p-10"
     >
       <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-5">
