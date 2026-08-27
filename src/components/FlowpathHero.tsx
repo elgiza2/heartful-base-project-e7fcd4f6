@@ -114,7 +114,14 @@ export default function FlowpathHero() {
         loop
         playsInline
       />
-      <div className="absolute inset-0 bg-black/10" />
+      {/* Vantage-style vignette over the video */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(0,0,0,.03), transparent 24%, transparent 82%, rgba(0,0,0,.05)), radial-gradient(ellipse at 44% 54%, transparent 30%, rgba(0,0,0,.055) 100%)",
+        }}
+      />
 
       {/* Nav */}
       <nav className="relative z-20 w-full px-5 py-4 sm:px-6 sm:py-5 md:px-12 lg:px-16">
