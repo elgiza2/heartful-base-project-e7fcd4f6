@@ -23,28 +23,28 @@ const NAV = [
 
 const CAPABILITIES = [
   {
+    title: "Unified AI workspace",
+    body: "Text generation, coding assistance, image creation and document handling in one screen — instead of a separate paid tool for each.",
+  },
+  {
     title: "Digital platform development",
     body: "We design, build and maintain our own platforms end to end — no outsourced core.",
   },
   {
-    title: "Applied AI research",
-    body: "Research only counts when it ships. We turn models into products people use daily.",
+    title: "High-performance cloud",
+    body: "Fast databases, optimised storage routing and edge functions keep the product responsive at near-zero latency.",
   },
   {
-    title: "Commerce infrastructure",
-    body: "E-commerce systems, billing and subscription operations run in-house.",
+    title: "Commerce & billing operations",
+    body: "E-commerce systems, subscriptions and billing run in-house, with pricing that stays readable.",
   },
   {
-    title: "Design systems & brand",
-    body: "One design language across every product we own, maintained by the team that ships it.",
+    title: "Automation & integrations",
+    body: "Automated media workflows and third-party integrations so recurring work stops being manual.",
   },
   {
     title: "Direct customer support",
     body: "Support is handled by the engineers who wrote the code. No ticket theatre.",
-  },
-  {
-    title: "Data handled with restraint",
-    body: "We collect what the product needs to work, and nothing we cannot justify.",
   },
 ];
 
@@ -54,14 +54,15 @@ const PRINCIPLES = [
     body: "A small team that ships directly, with no layers in between.",
   },
   {
-    title: "Reliability over novelty",
-    body: "Clear pricing, predictable systems, and data handled with restraint.",
+    title: "One product, not ten tools",
+    body: "Consolidation over sprawl: fewer subscriptions, fewer contexts, one workspace.",
   },
   {
     title: "Fast on an average phone",
     body: "Average device, average connection — that is the performance bar we hold.",
   },
 ];
+
 
 
 function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
