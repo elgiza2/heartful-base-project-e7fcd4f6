@@ -177,24 +177,25 @@ export default function OperationsSection() {
       aria-label="What Megsy does"
     >
       <header className="tri__head">
-        <h2>The company behind Megsy.</h2>
+        <h2>Technology, built with intention.</h2>
         <p>
-          Megsy for Digital Platforms Development and E-commerce LLC is an Egyptian technology
-          company registered and operating in Cairo. We design, build and run our own products end
-          to end — research, engineering, design and support under one roof.
+          Megsy is an Egyptian technology company that designs, builds and operates its own
+          products. We see technology as a craft: useful systems, built end-to-end, by a small team
+          that takes responsibility for every layer — from research to design, engineering and
+          support.
         </p>
       </header>
 
-      <div className="tri__cards" aria-label="Product benefits">
+      <div className="tri__cards" aria-label="How Megsy thinks about technology">
         {/* Card 1 */}
         <article className="card">
-          <div className="panel" aria-label="Visibility timeline chart">
+          <div className="panel" aria-label="Company lifecycle chart">
             <div className="timeline">
-              <span>06 AM</span>
+              <span>IDEA</span>
               <i />
-              <span>12 PM</span>
+              <span>BUILD</span>
               <i />
-              <span>06 PM</span>
+              <span>RUN</span>
             </div>
             <div className="bars" aria-hidden="true">
               {BAR_HEIGHTS.map((h, i) => (
@@ -205,12 +206,12 @@ export default function OperationsSection() {
                 />
               ))}
             </div>
-            <div className="value-chip">$4.7M</div>
+            <div className="value-chip">Full Stack</div>
             <div className="axis">
-              <span>START</span>
-              <span>ACTIVE</span>
-              <span>PEAK</span>
-              <span>COMPLETE</span>
+              <span>RESEARCH</span>
+              <span>DESIGN</span>
+              <span>ENGINEER</span>
+              <span>OPERATE</span>
             </div>
           </div>
           <div className="card-copy">
@@ -233,15 +234,15 @@ export default function OperationsSection() {
               <span className="badge">
                 <i className="spark" />
               </span>
-              <span>Megsy Research</span>
+              <span>Megsy Lab</span>
             </div>
-            <p className="question">What are we building next?</p>
+            <p className="question">What is our view of AI?</p>
             <div className="prompt">
-              Turn applied AI research into a shippable
+              Applied intelligence should solve real
               <br />
-              product that our own customers use
+              problems — not generate noise. We turn
               <br />
-              every day.
+              research into products people use daily.
             </div>
             <div className="automate">
               <span className="automate-label">Ship</span>
@@ -250,7 +251,7 @@ export default function OperationsSection() {
             <i className="cursor" aria-hidden="true" />
           </div>
           <div className="card-copy">
-            <h2>Applied AI Products</h2>
+            <h2>Applied AI Mindset</h2>
             <p>
               Research becomes real products
               <br />
@@ -266,10 +267,10 @@ export default function OperationsSection() {
         <article className="card">
           <div className="panel">
             <div className="metric">
-              <div className="metric-label">Time saved</div>
+              <div className="metric-label">Systems built</div>
               <div className="metric-row">
-                <strong>128 Hrs</strong>
-                <span>↑ 18% efficiency</span>
+                <strong>In-House</strong>
+                <span>↑ reliability</span>
               </div>
             </div>
             <canvas
@@ -277,9 +278,9 @@ export default function OperationsSection() {
               ref={flowRef}
               aria-label="Decision paths converging into an optimized result"
             />
-            <div className="tag action">Action: Approve</div>
-            <div className="tag confidence">Decision Confidence: 98%</div>
-            <div className="tag path">Path Optimized: +14.2%</div>
+            <div className="tag action">Principle: Own the stack</div>
+            <div className="tag confidence">Principle: Ship small, ship often</div>
+            <div className="tag path">Principle: Measure real usage</div>
           </div>
           <div className="card-copy">
             <h2>Commerce Infrastructure</h2>
@@ -297,18 +298,18 @@ export default function OperationsSection() {
 
       <div className="tri__doing">
         <div>
-          <h3>What we do</h3>
+          <h3>How we work</h3>
           <p>
-            We build applied AI software and the digital commerce infrastructure around it: product
-            engineering, platform operations, and the systems that let a small team ship at scale.
+            We believe the best technology comes from small teams with clear ownership. Our work is
+            guided by reliability, restraint with data, and respect for the user’s time and device.
           </p>
         </div>
         <ul>
-          <li>Digital platform development and maintenance.</li>
-          <li>Applied AI research turned into shippable product.</li>
-          <li>E-commerce systems, billing and subscription operations.</li>
-          <li>Design systems and brand work for our own products.</li>
-          <li>Direct customer support, handled by the team that builds.</li>
+          <li>Small team, direct ownership — no layers between builder and user.</li>
+          <li>Reliability over novelty. We ship what works and improve it.</li>
+          <li>Clear economics: honest pricing, transparent operations.</li>
+          <li>Data handled with restraint. We collect only what we need.</li>
+          <li>Fast on average phones and average connections — that is the bar.</li>
         </ul>
       </div>
     </section>
