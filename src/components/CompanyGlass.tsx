@@ -250,6 +250,7 @@ export default function CompanyGlass() {
               <canvas className="tg__dupImage" ref={canvasRef} />
             </div>
             <div className="tg__frost" aria-hidden="true" />
+            <span className="tg__cardCircle" aria-hidden="true" />
 
             <div>
               <div className="tg__head">
