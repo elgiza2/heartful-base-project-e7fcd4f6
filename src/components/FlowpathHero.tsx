@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 
-const VIDEO_URL =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260819_212700_3bb9329b-5c50-4257-a09b-ca85cf3654a3.mp4";
-
 const NAV_ITEMS = [
   {
     label: "Company",
@@ -94,24 +91,12 @@ export default function FlowpathHero() {
   }, [mobileOpen]);
 
   return (
-    <section className="relative flex h-screen w-full flex-col overflow-hidden">
-      {/* Background video */}
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        src={VIDEO_URL}
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
-      {/* Vignette over the video */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(0,0,0,.28), transparent 30%, transparent 78%, rgba(0,0,0,.32)), radial-gradient(ellipse at 44% 54%, transparent 30%, rgba(0,0,0,.18) 100%)",
-        }}
-      />
+    <section
+      className="relative flex h-screen w-full flex-col overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #03070A 0%, #AAC2CE 100%)",
+      }}
+    >
 
       {/* Nav */}
       <nav className="relative z-20 w-full px-5 py-4 sm:px-6 sm:py-5 md:px-12 lg:px-16">
