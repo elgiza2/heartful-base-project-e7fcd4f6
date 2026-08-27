@@ -1,8 +1,6 @@
-import { useEffect, useRef } from "react";
 import NexaHero from "./components/NexaHero";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
   Boxes,
   Building2,
   Cpu,
@@ -11,20 +9,12 @@ import {
   LifeBuoy,
   Mail,
   MapPin,
-  Menu,
   Palette,
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
 
-const NAV = [
-  { label: "Company", href: "#company" },
-  { label: "What we do", href: "#work" },
-  { label: "Leadership", href: "#leadership" },
-  { label: "Contact", href: "#contact" },
-];
 
-const HEADLINE = ["We", "build", "applied", "AI", "from", "Cairo."];
 
 const CAPABILITIES = [
   {
@@ -77,86 +67,6 @@ const PRINCIPLES = [
   },
 ];
 
-const MARQUEE = [
-  "Applied AI",
-  "Product engineering",
-  "Platform operations",
-  "Digital commerce",
-  "Design systems",
-  "Billing & subscriptions",
-  "Research → shipping",
-  "Cairo, Egypt",
-];
-
-function Backdrop() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const reduced = useReducedMotion();
-
-  useEffect(() => {
-    if (reduced) return;
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let raf = 0;
-    let w = 0;
-    let h = 0;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const dots = Array.from({ length: 70 }, () => ({
-      x: Math.random(),
-      y: Math.random(),
-      r: Math.random() * 1.6 + 0.4,
-      vx: (Math.random() - 0.5) * 0.00016,
-      vy: (Math.random() - 0.5) * 0.00016,
-      a: Math.random() * 0.4 + 0.1,
-    }));
-
-    const resize = () => {
-      w = canvas.clientWidth;
-      h = canvas.clientHeight;
-      canvas.width = Math.max(1, Math.round(w * dpr));
-      canvas.height = Math.max(1, Math.round(h * dpr));
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    const frame = () => {
-      raf = requestAnimationFrame(frame);
-      ctx.clearRect(0, 0, w, h);
-      for (const d of dots) {
-        d.x += d.vx;
-        d.y += d.vy;
-        if (d.x < 0 || d.x > 1) d.vx *= -1;
-        if (d.y < 0 || d.y > 1) d.vy *= -1;
-        ctx.beginPath();
-        ctx.arc(d.x * w, d.y * h, d.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${d.a})`;
-        ctx.fill();
-      }
-    };
-    raf = requestAnimationFrame(frame);
-
-    return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener("resize", resize);
-    };
-  }, [reduced]);
-
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 900], [0, reduced ? 0 : 140]);
-
-  return (
-    <motion.div style={{ y }} className="pointer-events-none absolute inset-0 z-0">
-      <div className="absolute inset-0 grid-lines" />
-      <div className="absolute inset-0 veil" />
-      <div className="absolute -left-24 top-1/4 h-[36rem] w-[36rem] rounded-full bg-primary/10 blur-[140px]" />
-      <div className="absolute -right-32 top-0 h-[28rem] w-[28rem] rounded-full bg-brand-mint/10 blur-[150px]" />
-      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
-    </motion.div>
-  );
-}
 
 function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   return (
