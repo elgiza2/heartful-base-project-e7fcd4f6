@@ -209,8 +209,7 @@ function Contact() {
         <Reveal>
           <div className="glass noise-overlay relative overflow-hidden rounded-3xl px-6 py-14 text-center sm:px-14">
             <div className="pointer-events-none absolute inset-x-0 -top-24 h-64 veil" />
-            <p className="eyebrow relative">Contact</p>
-            <h2 className="relative mt-4 text-[clamp(1.9rem,4.4vw,3.2rem)] font-semibold leading-[1.06]">
+            <h2 className="relative text-[clamp(1.9rem,4.4vw,3.2rem)] font-semibold leading-[1.06]">
               Talk to the people who build it.
             </h2>
             <p className="relative mx-auto mt-5 max-w-xl text-muted-foreground">
