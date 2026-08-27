@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import logoAsset from "@/assets/megsy-logo.png.asset.json";
-import megsyLogoAsset from "@/assets/megsy-logo.png.asset.json";
 
 const VIDEO_URL =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260819_212700_3bb9329b-5c50-4257-a09b-ca85cf3654a3.mp4";
