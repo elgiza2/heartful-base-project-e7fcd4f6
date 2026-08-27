@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
 import FlowpathHero from "./components/FlowpathHero";
 import CompanyGlass from "./components/CompanyGlass";
+import { FOOTER_LINKS } from "./site";
 import { motion } from "framer-motion";
+
 import {
   Boxes,
   Facebook,
