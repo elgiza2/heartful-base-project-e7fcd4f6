@@ -1,4 +1,4 @@
-import NexaHero from "./components/NexaHero";
+import FlowpathHero from "./components/FlowpathHero";
 import { motion } from "framer-motion";
 import {
   Boxes,
@@ -357,7 +357,7 @@ export default function App() {
   return (
     <div className="relative min-h-screen bg-background">
       <main>
-        <NexaHero />
+        <FlowpathHero />
         <Company />
         <Work />
         <Leadership />
