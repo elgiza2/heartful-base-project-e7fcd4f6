@@ -472,6 +472,71 @@ function Contact() {
   );
 }
 
+function Showcase() {
+  return (
+    <section id="showcase" className="relative overflow-hidden px-5 py-24 sm:px-8 sm:py-32">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[120px]" />
+      <div className="relative mx-auto max-w-6xl">
+        <Reveal>
+          <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Showcase</p>
+          <h2 className="mt-4 max-w-2xl text-[clamp(1.9rem,4.4vw,3.2rem)] font-semibold leading-[1.05]">
+            One company, one <span className="text-gradient">stack</span>.
+          </h2>
+        </Reveal>
+
+        <div className="relative mt-14 grid gap-6 lg:grid-cols-12">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="glass relative z-10 rounded-2xl p-8 lg:col-span-7 lg:p-10"
+          >
+            <Boxes className="h-5 w-5 text-primary" />
+            <h3 className="mt-6 text-2xl font-semibold">Research, engineering, design, support</h3>
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">
+              Everything that makes our products work lives under one roof in Cairo. The people who
+              research the models write the code, ship the interface and answer the customer.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+              {["In-house core", "No outsourced stack", "Direct ownership"].map((t) => (
+                <span key={t} className="glass-soft rounded-full px-3 py-1.5">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+            className="glass-soft relative rounded-2xl p-8 lg:col-span-5 lg:-ml-16 lg:mt-16 lg:p-10"
+          >
+            <Gauge className="h-5 w-5 text-primary" />
+            <h3 className="mt-6 text-xl font-semibold">Built to hold up in production</h3>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              Reliability before novelty. Clear economics. Fast on an average phone and an average
+              connection — that is the bar we measure against.
+            </p>
+            <dl className="mt-8 grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <dt className="text-muted-foreground">Base</dt>
+                <dd className="mt-1 font-medium">Cairo, Egypt</dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground">Leadership</dt>
+                <dd className="mt-1 font-medium">One CEO</dd>
+              </div>
+            </dl>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="relative border-t border-white/5 px-5 py-14 sm:px-8">
