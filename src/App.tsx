@@ -220,7 +220,6 @@ function Contact() {
             >
               <Mail className="h-4 w-4" /> support@megsyai.com
             </a>
-            <span className="text-sm text-muted-foreground">Cairo, Egypt · UTC+2</span>
           </div>
         </Reveal>
       </div>
