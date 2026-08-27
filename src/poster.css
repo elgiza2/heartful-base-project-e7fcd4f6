@@ -103,24 +103,6 @@ body {
   transform: scaleX(1.168);
 }
 
-/* ---------- pill ---------- */
-.status-pill {
-  position: absolute;
-  z-index: 4;
-  top: 2.336449dvh;
-  right: 7.5vw;
-  height: clamp(34px, 4.439252dvh, 57px);
-  display: inline-flex;
-  align-items: center;
-  padding: 0 1.6em;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--surface);
-  font-size: clamp(12px, min(1.09375vw, 1.72dvh), 21px);
-  letter-spacing: 0.026923em;
-  white-space: nowrap;
-}
-
 /* ---------- wordmark ---------- */
 .wordmark {
   position: absolute;
@@ -345,8 +327,7 @@ body {
   .burger {
     display: flex;
   }
-  .primary-nav,
-  .status-pill {
+  .primary-nav {
     display: none;
   }
 }
@@ -457,9 +438,6 @@ body {
 }
 .anim .brand-mark {
   animation: orb-quiet 620ms var(--orb-soft) 100ms both;
-}
-.anim .status-pill {
-  animation: orb-quiet 620ms var(--orb-soft) 340ms both;
 }
 .anim .burger {
   animation: orb-quiet 620ms var(--orb-soft) 300ms both;
