@@ -120,65 +120,6 @@ body {
   display: none;
 }
 
-.support-copy {
-  position: absolute;
-  z-index: 3;
-  bottom: 4.361371dvh;
-  color: #f7f7f7;
-  font-size: clamp(14px, min(1.40625vw, 2.102804dvh), 27px);
-  line-height: 1.22;
-  margin: 0;
-  pointer-events: none;
-}
-.support-copy--left {
-  left: 3.177083vw;
-}
-.support-copy--left .support-copy__inner {
-  display: block;
-  transform: scaleX(1.073);
-  transform-origin: left bottom;
-}
-.support-copy--right {
-  left: 78.28125vw;
-}
-.support-copy--right .support-copy__inner {
-  display: block;
-  transform: scaleX(1.058);
-  transform-origin: left bottom;
-}
-
-.scroll-hint {
-  position: absolute;
-  z-index: 4;
-  bottom: 2.2dvh;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 26px;
-  height: 40px;
-  border: 1.5px solid rgba(255, 255, 255, 0.35);
-  border-radius: 13px;
-  display: flex;
-  justify-content: center;
-  padding-top: 8px;
-}
-.scroll-hint span {
-  width: 4px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 2px;
-  animation: scroll-bounce 1.6s ease-in-out infinite;
-}
-@keyframes scroll-bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(6px);
-    opacity: 1;
-  }
-}
 
 @media (max-width: 1200px), (max-aspect-ratio: 1 / 1) {
   .wordmark {
@@ -198,22 +139,6 @@ body {
   .wordmark {
     font-size: min(27.5vw, 18dvh);
     top: 13dvh;
-  }
-  .support-copy {
-    bottom: 3.2dvh;
-    max-width: 44vw;
-    white-space: normal;
-  }
-  .support-copy--left {
-    left: 5vw;
-  }
-  .support-copy--right {
-    left: auto;
-    right: 5vw;
-    text-align: right;
-  }
-  .support-copy--right .support-copy__inner {
-    transform-origin: right bottom;
   }
 }
 
@@ -279,15 +204,11 @@ body {
 .anim .brand-mark {
   animation: orb-quiet 620ms var(--orb-soft) 100ms both;
 }
-.anim .support-copy__inner {
-  animation: orb-corner 720ms var(--orb-soft) 980ms both;
-}
 
 @media (prefers-reduced-motion: reduce) {
   .anim .wordmark__inner,
   .anim .flower,
-  .anim .brand-mark,
-  .anim .support-copy__inner {
+  .anim .brand-mark {
     animation: none !important;
   }
   .anim .stage {
