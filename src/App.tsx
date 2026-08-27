@@ -409,8 +409,11 @@ function Footer() {
                     <span>support@megsyai.com</span>
                   </li>
                   <li>
-                    <span>Cairo, Egypt · UTC+2</span>
+                    <a href="tel:+201098125727" className="hover:text-white transition-colors">
+                      +20 109 812 5727
+                    </a>
                   </li>
+
                 </ul>
               </div>
             </div>
