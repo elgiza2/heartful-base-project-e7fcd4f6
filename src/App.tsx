@@ -353,9 +353,10 @@ function Footer() {
                 </span>
               </div>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                Megsy builds applied AI infrastructure and digital commerce platforms from Cairo,
-                shipping end-to-end products under one roof.
+                Megsy is a registered Egyptian company building unified AI workspaces — one product
+                that replaces a stack of separate subscriptions, engineered and supported in-house.
               </p>
+
             </div>
 
             <div className="grid grid-cols-2 gap-10 md:col-span-7 md:grid-cols-3">
