@@ -315,7 +315,7 @@ function MegsyLogo() {
     <img
       src="/brand-logos/megsy.png"
       alt="Megsy"
-      className="h-6 w-auto object-contain"
+      className="logo-item h-5 w-auto object-contain"
     />
   );
 }
