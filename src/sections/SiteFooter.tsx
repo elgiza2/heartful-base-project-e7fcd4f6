@@ -5,29 +5,26 @@ const FOOTER_VIDEO =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260429_114316_1c7889ad-2885-410e-b493-98119fee0ddb.mp4";
 
 const LINKS: Array<{ title: string; items: string[] }> = [
-  {
-    title: "Discover",
-    items: ["Labs & Workshops", "Deep Dive Series", "Global Circle", "Resource Vault", "Future Roadmap"],
-  },
-  { title: "The Mission", items: ["Origin Story", "The Collective", "Newsroom Hub", "Join the Team"] },
-  { title: "Concierge", items: ["Get in Touch", "Legal Privacy", "User Agreement", "Report Concern"] },
+  { title: "Company", items: ["About Megsy", "Leadership", "Careers", "Press"] },
+  { title: "Operations", items: ["Engineering", "Design", "Support", "Security"] },
+  { title: "Legal", items: ["Privacy Policy", "Terms of Use", "Refund Policy", "Contact"] },
 ];
 
 const SOCIALS = [Music2, Facebook, Twitter, Youtube, Instagram];
 
 export default function SiteFooter() {
   return (
-    <div className="relative flex w-full min-h-[115vh] flex-col items-center overflow-x-hidden font-sans selection:bg-white/20 selection:text-white">
+    <div className="relative isolate flex w-full flex-col items-center overflow-hidden bg-[#0b0b0b] font-sans selection:bg-white/20 selection:text-white">
       <video
         src={FOOTER_VIDEO}
         autoPlay
         loop
         muted
         playsInline
-        className="fixed inset-0 z-[0] h-full w-full object-cover"
+        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-80"
       />
 
-      <div className="relative z-10 flex w-full max-w-7xl flex-1 flex-col px-4 pt-24 md:px-8">
+      <div className="relative z-10 flex w-full max-w-7xl flex-col px-4 pb-10 pt-24 md:px-8">
         <div className="text-center text-white">
           <h2 className="text-3xl font-medium md:text-5xl">Build with Megsy.</h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/70">
@@ -46,7 +43,7 @@ export default function SiteFooter() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-          className="liquid-glass mt-32 w-full rounded-3xl p-6 text-white/70 md:mt-64 md:p-10"
+          className="liquid-glass mt-24 w-full rounded-3xl p-6 text-white/70 md:mt-32 md:p-10"
         >
           <div className="mb-10 grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
             <div className="md:col-span-5">
