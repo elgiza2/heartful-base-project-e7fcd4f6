@@ -130,8 +130,7 @@ function Leadership() {
       <div className="pointer-events-none absolute inset-0 z-[1] bg-black/30" />
       <div className="relative z-10 mx-auto max-w-6xl">
         <Reveal>
-          <p className="eyebrow">Leadership</p>
-          <h2 className="mt-4 max-w-2xl text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-[1.08]">
+          <h2 className="max-w-2xl text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-[1.08]">
             One CEO. One line of accountability.
           </h2>
         </Reveal>
