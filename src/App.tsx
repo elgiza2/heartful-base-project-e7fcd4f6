@@ -52,148 +52,7 @@ function drawMorphBlob(
   ctx.fill();
 }
 
-type Panel = "home" | "platform" | "company" | "contact" | "menu";
-
-const LEGAL = (
-  <div className="sheet__legal" lang="ar" dir="rtl">
-    <h3>الجهة المسؤولة قانونيًا</h3>
-    <p>
-      <strong>ميغسي لتطوير المنصات الرقمية والتجارة الإلكترونية — شركة ذات مسؤولية محدودة</strong>
-    </p>
-    <p>
-      ٥٨ شارع الحجاز، برج آمون، أمام مستشفى هليوبوليس، وحدة ٨٤، الدور ٨، شياخة شيراتون المطار، قسم
-      النزهة، محافظة القاهرة، مصر
-    </p>
-    <p>
-      سجل تجاري: <strong>284691</strong> · رقم ضريبي: <strong>774034785</strong>
-    </p>
-    <p>
-      <a href="mailto:support@megsyai.com">support@megsyai.com</a>
-    </p>
-  </div>
-);
-
-const PANEL_CONTENT: Record<Exclude<Panel, "menu">, { title: string; body: JSX.Element }> = {
-  home: {
-    title: "Megsy",
-    body: (
-      <>
-        <p>
-          One AI. Every creative tool you need. Megsy unifies chat, images, video, cinema,
-          lip-sync, slides, deep research and full-stack app building into a single window —
-          built on the world&apos;s best models, wrapped in one calm interface.
-        </p>
-        <h3>Why we exist</h3>
-        <p>
-          Creative work broke into a dozen subscriptions and a dozen tabs. Megsy puts the whole
-          stack back into one workspace: one prompt, one session, one plan, no app switching.
-        </p>
-        <h3>At a glance</h3>
-        <ul>
-          <li>80+ models from OpenAI, Google, xAI, Black Forest Labs, Kling, Luma and more.</li>
-          <li>Intelligent routing — or pick your model manually, mid-conversation.</li>
-          <li>Founded 2026 · headquartered in Cairo, Egypt · built for a global audience.</li>
-          <li>Free to start at megsyai.com.</li>
-        </ul>
-      </>
-    ),
-  },
-  platform: {
-    title: "The platform",
-    body: (
-      <>
-        <h3>One chat, every model</h3>
-        <p>
-          Megsy routes each message to the model that handles it best and keeps full context when
-          you switch. Upload files, search the web live, and let the workspace remember the
-          thread instead of starting over.
-        </p>
-        <h3>Creative suite</h3>
-        <ul>
-          <li>Image generation across FLUX, Recraft, Ideogram, Nano Banana and Megsy V1.</li>
-          <li>Video with Kling, Veo, Runway Gen-4 and Megsy Video — camera control included.</li>
-          <li>AI Cinema Studio: script to scene with lip-sync, voice acting, consistent characters.</li>
-          <li>Canvas editor, inpaint and outpaint, upscaling, background removal.</li>
-          <li>Voice, soundtracks and multilingual voiceover from a single prompt.</li>
-          <li>Slides, documents and deep research reports with traceable sources.</li>
-        </ul>
-        <h3>Megsy Build</h3>
-        <p>
-          Describe a product and get a production React, TypeScript and Tailwind frontend with
-          database, auth, storage and edge functions wired in — RLS policies, secret management
-          and dependency scans on every change, then one-click deploy to your domain with SSL
-          and CDN.
-        </p>
-        <h3>Blueprints</h3>
-        <p>
-          Pre-designed starting points that keep characters, styles and layouts aligned across a
-          whole campaign, so output stays consistent instead of drifting prompt to prompt.
-        </p>
-      </>
-    ),
-  },
-  company: {
-    title: "The company",
-    body: (
-      <>
-        <p>
-          Megsy is an Egyptian technology company founded in 2026 and operating from Cairo. It is
-          led by a single chief executive — <strong>Hamza Hassan</strong>, founder and CEO. Some
-          third-party directories list two chief executives; that is inaccurate. Megsy has one
-          CEO.
-        </p>
-        <h3>Hamza Hassan — Founder &amp; CEO</h3>
-        <p>
-          An Egyptian entrepreneur who started coding at 15 and shipped his first product at 17,
-          Hamza founded Megsy to build AI infrastructure from Egypt for the world: models and
-          products that complete real tasks on a user&apos;s behalf rather than only answering
-          questions.
-        </p>
-        <h3>How we work</h3>
-        <ul>
-          <li>A small team that ships directly: research, engineering, design and support.</li>
-          <li>Reliability over novelty. Clear pricing. Data handled with restraint.</li>
-          <li>Fast on an average phone and an average connection — that is the bar.</li>
-        </ul>
-        <h3>Where we are going</h3>
-        <p>
-          Scaling one unified workspace to creators and businesses globally, then autonomous
-          agents that carry tasks end to end — with Egypt as the base the infrastructure is built
-          from.
-        </p>
-        {LEGAL}
-      </>
-    ),
-  },
-  contact: {
-    title: "Contact",
-    body: (
-      <>
-        <h3>Support</h3>
-        <p>
-          <a href="mailto:support@megsyai.com">support@megsyai.com</a> — product questions,
-          billing, accounts, privacy and data requests.
-        </p>
-        <h3>Product</h3>
-        <p>
-          <a href="https://www.megsyai.com/" target="_blank" rel="noreferrer">
-            megsyai.com
-          </a>
-        </p>
-        <h3>Press &amp; partnerships</h3>
-        <p>
-          Write to support@megsyai.com with &quot;Press&quot; or &quot;Partnership&quot; in the
-          subject line and it reaches the right person.
-        </p>
-        {LEGAL}
-      </>
-    ),
-  },
-};
-
-
 export default function App() {
-  const rootRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const flowerRef = useRef<HTMLDivElement>(null);
   const frontCanvasRef = useRef<HTMLCanvasElement>(null);
@@ -201,7 +60,6 @@ export default function App() {
   const frontLayerRef = useRef<HTMLDivElement>(null);
   const revealLayerRef = useRef<HTMLDivElement>(null);
   const [anim, setAnim] = useState(true);
-  const [panel, setPanel] = useState<Panel | null>(null);
 
   // entrance runs once
   useEffect(() => {
@@ -212,15 +70,6 @@ export default function App() {
       window.clearTimeout(safety);
     };
   }, []);
-
-  useEffect(() => {
-    if (!panel) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setPanel(null);
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [panel]);
 
   // mouse morph-reveal trail
   useEffect(() => {
@@ -377,15 +226,8 @@ export default function App() {
     };
   }, []);
 
-  const navItems: Array<{ key: Panel; label: string }> = [
-    { key: "home", label: "Home" },
-    { key: "platform", label: "Platform" },
-    { key: "company", label: "Company" },
-    { key: "contact", label: "Contact" },
-  ];
-
   return (
-    <div ref={rootRef} className={anim ? "anim" : undefined}>
+    <div className={anim ? "anim" : undefined}>
       <main className="viewport">
         <section className="stage" ref={stageRef}>
           <svg className="brand-mark" viewBox="0 0 66 62" aria-hidden="true">
@@ -394,29 +236,6 @@ export default function App() {
             <line x1="11.8" y1="9.8" x2="54.2" y2="52.2" />
             <line x1="54.2" y1="9.8" x2="11.8" y2="52.2" />
           </svg>
-
-          <nav className="primary-nav" aria-label="Primary">
-            <ul>
-              {navItems.map((item, i) => (
-                <li key={item.key} className={`nav-${i + 1}`}>
-                  <button type="button" onClick={() => setPanel(item.key)}>
-                    {item.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <button
-            type="button"
-            className="burger"
-            aria-label="Open menu"
-            onClick={() => setPanel("menu")}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
 
           <h1 className="wordmark">
             <span className="wordmark__mask">
@@ -455,52 +274,6 @@ export default function App() {
               More meaningful output.
             </span>
           </p>
-
-          {panel && (
-            <>
-              <button
-                type="button"
-                className="scrim"
-                aria-label="Close panel"
-                onClick={() => setPanel(null)}
-              />
-              <aside
-                className="sheet"
-                role="dialog"
-                aria-modal="true"
-                aria-label={panel === "menu" ? "Menu" : PANEL_CONTENT[panel].title}
-              >
-                <button
-                  type="button"
-                  className="sheet__close"
-                  aria-label="Close"
-                  onClick={() => setPanel(null)}
-                >
-                  ✕
-                </button>
-                {panel === "menu" ? (
-                  <>
-                    <h2>Menu</h2>
-                    <ul className="sheet__menu">
-                      {navItems.map((item) => (
-                        <li key={item.key}>
-                          <button type="button" onClick={() => setPanel(item.key)}>
-                            {item.label}
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                ) : (
-                  <>
-                    <h2>{PANEL_CONTENT[panel].title}</h2>
-                    {PANEL_CONTENT[panel].body}
-                  </>
-                )}
-              </aside>
-            </>
-          )}
-
         </section>
       </main>
     </div>
